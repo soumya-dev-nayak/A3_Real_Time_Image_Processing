@@ -40,30 +40,13 @@ At power-up, before any PC upload happens, the frame buffer is pre-loaded from a
 
 ## Pipeline overview
 
-```
- PC (Python/Tkinter)                FPGA (Agilex 3, Atum A3 Nano)
- ───────────────────                ─────────────────────────────
-  load image                         ┌─────────────────────────────┐
-     │                               │  uart_rx (8N1, @50 MHz)       │
-     ▼                               │        │                      │
-  resize → 480×270 RGB               │        ▼                      │
-     │                               │  uart_frame_rx                │
-     ▼                               │  (0xAA 0x55 sync + parser)    │
-  0xAA 0x55 + raw RGB bytes          │        │ we / waddr / wdata   │
-     │  (UART, 115200–3.125 Mbaud)   │        ▼                      │
-     └──────────────────────────────▶│  frame_buffer                │
-                                      │  (dual-port M20K RAM,        │
-                                      │   480×270×24-bit)            │
-                                      │        │ read @ pclk         │
-                                      │        ▼                     │
-                                      │  img_reader (4× upscale      │
-                                      │   address map)               │
-                                      │        ▼                     │
-                                      │  pixel_proc (invert toggle)  │
-                                      │        ▼                     │
-                                      │  video_timing (1080p60) ────▶│──▶ HDMI (TFP410)
-                                      └─────────────────────────────┘
-```
+<p align="center">
+  <img src="https://raw.githubusercontent.com/soumya-dev-nayak/A3_Real_Time_Image_Processing/main/PC_TO_FPGA_pipeline.png" width="800">
+</p>
+
+<p align="center">
+  <b>Figure 1:</b> PC to FPGA Data Processing Pipeline
+</p>
 
 See `PC_TO_FPGA_pipeline.png` and `data_flow_diagram.svg` in the repo root for the original hand-drawn versions of this diagram.
 
