@@ -1,0 +1,438 @@
+Fitter Route Stage Report for golden_top
+Wed Nov 25 18:00:43 2026
+Quartus Prime Version 26.1.1 Build 130 08/06/2026 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Nets with Highest Wire Count
+  3. Delay Chain Summary
+  4. Routing Usage Summary
+  5. Route Messages
+  6. Estimated Delay Added for Hold Timing Summary
+  7. Estimated Delay Added for Hold Timing Details
+  8. Global Router Wire Utilization Map
+  9. Peak Wire Demand Summary
+ 10. Peak Wire Demand Details
+ 11. Peak Total Grid Crossings
+ 12. Global Router Congestion Hotspot Summary
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2026  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Nets with Highest Wire Count                                                                                  ;
++-------------------------------------------------------------------------------+----------------------+--------+
+; Net                                                                           ; Number of Wires Used ; Fanout ;
++-------------------------------------------------------------------------------+----------------------+--------+
+; u_reader|add_0~16                                                             ; 493                  ; 1537   ;
+; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|address_reg_b[0] ; 484                  ; 250    ;
+; u_reader|add_0~1                                                              ; 464                  ; 1537   ;
+; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|address_reg_b[4] ; 454                  ; 248    ;
+; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|address_reg_b[2] ; 451                  ; 247    ;
+; u_reader|add_0~11                                                             ; 433                  ; 1537   ;
+; u_reader|add_0~26                                                             ; 426                  ; 1513   ;
+; u_reader|add_0~21                                                             ; 417                  ; 1537   ;
+; u_reader|add_0~6                                                              ; 394                  ; 1537   ;
+; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|address_reg_b[1] ; 346                  ; 172    ;
++-------------------------------------------------------------------------------+----------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Delay Chain Summary                                                                                                                                               ;
++------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+; Name             ; Pin Type ; Input Delay Chain 0 ; Output Delay Chain ; OE Delay Chain ; IO_12_LANE Input Data Delay Chain ; IO_12_LANE Input Strobe Delay Chain ;
++------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+; SW[1]            ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; LED[0]           ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; LED[1]           ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; LED[2]           ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; LED[3]           ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_HS       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_VS       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[0]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[1]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[2]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[3]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[4]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[5]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[6]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[7]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[8]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[9]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[10]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[11]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[12]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[13]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[14]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[15]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[16]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[17]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[18]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[19]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[20]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[21]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[22]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_D[23]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_DE       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_TX_CLK_p    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_ISEL        ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_PD_n        ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; HDMI_I2C_SCL     ; Bidir    ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; HDMI_I2C_SDA     ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; CLOCK0_50        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; KEY[1]           ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; FPGA_UART_RX     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; SW[0]            ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; KEY[0]           ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; HDMI_TX_CLK_p(n) ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
++------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Routing Usage Summary                                           ;
++--------------------------------------+--------------------------+
+; Routing Resource Type                ; Usage                    ;
++--------------------------------------+--------------------------+
+; Block Input Mux Wrapbacks            ; 1 / 43,616 ( < 1 % )     ;
+; Block Input Muxes                    ; 12,383 / 500,456 ( 2 % ) ;
+; Block interconnects                  ; 10,871 / 526,400 ( 2 % ) ;
+; C1 interconnects                     ; 6,936 / 234,240 ( 3 % )  ;
+; C4 interconnects                     ; 5,210 / 229,360 ( 2 % )  ;
+; C8 interconnects                     ; 395 / 22,936 ( 2 % )     ;
+; DCM_muxes                            ; 2 / 216 ( < 1 % )        ;
+; DELAY_CHAINs                         ; 0 / 1,262 ( 0 % )        ;
+; Direct links                         ; 694 / 526,400 ( < 1 % )  ;
+; HIO Buffers                          ; 4 / 10,528 ( < 1 % )     ;
+; IO75XDDRFMXCKTREE_CLKDRV_BIG_VCO_REs ; 0 / 8 ( 0 % )            ;
+; IO75XDDRFMXCKTREE_CLKDRV_GM0_REs     ; 0 / 8 ( 0 % )            ;
+; IO75XDDRFMXCKTREE_CLKDRV_VCO_INPUTs  ; 0 / 4 ( 0 % )            ;
+; IO75XDDRFMXCKTREE_CLKDRV_VCO_OUTPUTs ; 0 / 4 ( 0 % )            ;
+; IO75XDDRFMXCKTREE_FB_MUX31_REs       ; 0 / 24 ( 0 % )           ;
+; IOFBRADAPT_C2P_BUF_INPUTs            ; 0 / 66 ( 0 % )           ;
+; IOFBRADAPT_C2P_BUF_OUTPUTs           ; 0 / 66 ( 0 % )           ;
+; IOFBRADAPT_FRZ_BUFS_REs              ; 0 / 308 ( 0 % )          ;
+; IOFBRADAPT_P2C_BUF_INPUTs            ; 0 / 142 ( 0 % )          ;
+; IOFBRADAPT_P2C_BUF_OUTPUTs           ; 0 / 142 ( 0 % )          ;
+; Programmable Invert Buffers          ; 0 / 208 ( 0 % )          ;
+; Programmable Invert Inputs           ; 530 / 57,078 ( < 1 % )   ;
+; Programmable Inverts                 ; 530 / 57,078 ( < 1 % )   ;
+; R0 interconnects                     ; 6,341 / 401,380 ( 2 % )  ;
+; R1 interconnects                     ; 4,308 / 229,360 ( 2 % )  ;
+; R12 interconnects                    ; 427 / 34,404 ( 1 % )     ;
+; R2 interconnects                     ; 1,524 / 115,620 ( 1 % )  ;
+; R4 interconnects                     ; 1,724 / 117,500 ( 1 % )  ;
+; R6 interconnects                     ; 2,789 / 118,440 ( 2 % )  ;
+; Redundancy Muxes                     ; 12 / 20,728 ( < 1 % )    ;
+; Row Clock Tap-Offs                   ; 460 / 34,404 ( 1 % )     ;
+; Switchbox_clock_muxes                ; 7 / 1,920 ( < 1 % )      ;
+; VIO Buffers                          ; 3 / 8,320 ( < 1 % )      ;
+; Vertical_seam_tap_muxes              ; 8 / 576 ( 1 % )          ;
++--------------------------------------+--------------------------+
+
+
++----------------+
+; Route Messages ;
++----------------+
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 26.1.1 Build 130 08/06/2026 SC Pro Edition
+    Info: Processing started: Wed Nov 25 17:57:46 2026
+    Info: System process ID: 14036
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off A3_Real_Time_Image_Processing -c golden_top
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = A3_Real_Time_Image_Processing
+Info: Revision = golden_top
+Info (22300): Design uses Placement Effort Multiplier = 0.8.
+Info (170193): Fitter routing operations beginning
+Info (20215): Router estimated peak short interconnect demand : 11% of up directional wire in region X96_Y24 to X107_Y31
+    Info (20265): Estimated peak short right directional wire demand : 0% in region X84_Y48 to X95_Y54
+    Info (20265): Estimated peak short left directional wire demand : 0% in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak short up directional wire demand : 11% in region X96_Y24 to X107_Y31
+    Info (20265): Estimated peak short down directional wire demand : 4% in region X96_Y16 to X107_Y23
+Info (20215): Router estimated peak long high speed interconnect demand : 90% of down directional wire in region X96_Y40 to X107_Y47
+    Info (20265): Estimated peak long high speed right directional wire demand : 43% in region X84_Y32 to X95_Y39
+    Info (20265): Estimated peak long high speed left directional wire demand : 49% in region X84_Y24 to X95_Y31
+    Info (20265): Estimated peak long high speed up directional wire demand : 75% in region X108_Y24 to X119_Y31
+    Info (20265): Estimated peak long high speed down directional wire demand : 90% in region X96_Y40 to X107_Y47
+    Info (20315): Note that the router may use short wires to implement long connections at higher delay
+Info (170239): Router is attempting to preserve 0.10 percent of routes from an earlier compilation, a user specified Routing Constraints File, or internal routing requirements.
+Info (11888): Total time spent on timing analysis during Routing is 1.21 seconds.
+Info (16607): Fitter routing operations ending: elapsed time is 00:00:14
+
+
++---------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                         ;
++---------------------------------+---------------------------------+-------------------+
+; Source Clock(s)                 ; Destination Clock(s)            ; Delay Added in ns ;
++---------------------------------+---------------------------------+-------------------+
+; u_V_PLL|iopll_0_refclk          ; CLK_400K                        ; 23.0              ;
+; u_V_PLL|iopll_0_refclk,CLK_400K ; CLK_400K                        ; 9.1               ;
+; u_V_PLL|iopll_0_refclk          ; u_V_PLL|iopll_0_refclk,CLK_400K ; 1.3               ;
++---------------------------------+---------------------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
+
+
++-----------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                   ;
++----------------------+----------------------+-------------------+
+; Source Register      ; Destination Register ; Delay Added in ns ;
++----------------------+----------------------+-------------------+
+; u_TFP410_I2C|WCNT[7] ; u_TFP410_I2C|WCNT[7] ; 0.020             ;
++----------------------+----------------------+-------------------+
+Note: This table only shows the top 1 path(s) that have the largest delay added for hold.
+
+
+--------------------------------------
+; Global Router Wire Utilization Map ;
+--------------------------------------
+This report is unavailable in plain text report export.
+
+
++-------------------------------------------------------------------------------+
+; Peak Wire Demand Summary                                                      ;
++-----------------+-----------+-----------------------------------+-------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ;
++-----------------+-----------+-----------------------------------+-------------+
+; short           ; right     ; [(84, 48), (95, 54)]              ; 0.222 %     ;
+; short           ; up        ; [(96, 24), (107, 31)]             ; 11.806 %    ;
+; short           ; down      ; [(96, 16), (107, 23)]             ; 4.306 %     ;
+; long high speed ; right     ; [(84, 32), (95, 39)]              ; 43.831 %    ;
+; long high speed ; left      ; [(84, 24), (95, 31)]              ; 49.342 %    ;
+; long high speed ; up        ; [(108, 24), (119, 31)]            ; 75.000 %    ;
+; long high speed ; down      ; [(96, 40), (107, 47)]             ; 90.476 %    ;
++-----------------+-----------+-----------------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Peak Wire Demand Details                                                                                                                                                  ;
++-----------------+-----------+-----------------------------------+-------------+-------------------------------------------------------------------------------------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ; Net Names                                                                                 ;
++-----------------+-----------+-----------------------------------+-------------+-------------------------------------------------------------------------------------------+
+; short           ; right     ; [(84, 48), (95, 54)]              ; 0.222 %     ;    High Routing Fan-Out                                                                   ;
+;     --          ;           ;                                   ;             ; u_sync_delay|pipe[2][1]                                                                   ;
+; short           ; right     ; [(84, 48), (95, 54)]              ; 0.222 %     ;    Long Distance                                                                          ;
+;     --          ;           ;                                   ;             ; u_sync_delay|pipe[2][1]                                                                   ;
+; short           ; up        ; [(96, 24), (107, 31)]             ; 11.806 %    ;    High Routing Fan-Out                                                                   ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~21                                                                         ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[10]                                                                      ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[8]~_Duplicate_18                                                         ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[0]~_Duplicate_2                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[1]~_Duplicate_4                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[2]~_Duplicate_6                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[3]~_Duplicate_8                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[4]~_Duplicate_10                                                         ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[5]~_Duplicate_12                                                         ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[6]~_Duplicate_14                                                         ;
+; short           ; up        ; [(96, 24), (107, 31)]             ; 11.806 %    ;    Long Distance                                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[10]                                                                      ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[10]~_Duplicate                                                           ;
+;     --          ;           ;                                   ;             ; u_timing|x[5]~_Duplicate_10                                                               ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~21                                                                         ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[8]~_Duplicate_18                                                         ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[0]~_Duplicate_2                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[1]~_Duplicate_4                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[2]~_Duplicate_6                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[3]~_Duplicate_8                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[4]~_Duplicate_10                                                         ;
+; short           ; down      ; [(96, 16), (107, 23)]             ; 4.306 %     ;    High Routing Fan-Out                                                                   ;
+;     --          ;           ;                                   ;             ; u_timing|x[2]~_Duplicate                                                                  ;
+;     --          ;           ;                                   ;             ; u_timing|x[3]~_Duplicate                                                                  ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[0]~_Duplicate_2                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[2]~_Duplicate_6                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[3]~_Duplicate_8                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[4]~_Duplicate_10                                                         ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[6]~_Duplicate_14                                                         ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[8]~_Duplicate_18                                                         ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[9]~_Duplicate_20                                                         ;
+;     --          ;           ;                                   ;             ; u_timing|x[2]~_Duplicate_4                                                                ;
+; short           ; down      ; [(96, 16), (107, 23)]             ; 4.306 %     ;    Long Distance                                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[4]                                                                       ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[8]                                                                       ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[10]~_Duplicate_22                                                        ;
+;     --          ;           ;                                   ;             ; u_timing|x[2]~_Duplicate                                                                  ;
+;     --          ;           ;                                   ;             ; u_timing|x[3]~_Duplicate                                                                  ;
+;     --          ;           ;                                   ;             ; u_timing|x[2]~_Duplicate_4                                                                ;
+;     --          ;           ;                                   ;             ; u_timing|x[3]~_Duplicate_6                                                                ;
+;     --          ;           ;                                   ;             ; u_timing|x[4]~_Duplicate_8                                                                ;
+;     --          ;           ;                                   ;             ; u_timing|x[5]~_Duplicate_10                                                               ;
+;     --          ;           ;                                   ;             ; u_timing|x[6]~_Duplicate_12                                                               ;
+; long high speed ; right     ; [(84, 32), (95, 39)]              ; 43.831 %    ;    High Routing Fan-Out                                                                   ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~11                                                                         ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~1                                                                          ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~6                                                                          ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~16                                                                         ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~26                                                                         ;
+;     --          ;           ;                                   ;             ; u_timing|x[3]~_Duplicate                                                                  ;
+;     --          ;           ;                                   ;             ; u_timing|x[4]~_Duplicate                                                                  ;
+;     --          ;           ;                                   ;             ; u_timing|x[5]~_Duplicate                                                                  ;
+;     --          ;           ;                                   ;             ; u_timing|x[2]~_Duplicate                                                                  ;
+;     --          ;           ;                                   ;             ; u_timing|x[2]~_Duplicate_4                                                                ;
+; long high speed ; right     ; [(84, 32), (95, 39)]              ; 43.831 %    ;    Long Distance                                                                          ;
+;     --          ;           ;                                   ;             ; u_timing|x[3]~_Duplicate                                                                  ;
+;     --          ;           ;                                   ;             ; u_timing|x[4]~_Duplicate                                                                  ;
+;     --          ;           ;                                   ;             ; u_timing|x[2]~_Duplicate                                                                  ;
+;     --          ;           ;                                   ;             ; u_timing|x[5]~_Duplicate                                                                  ;
+;     --          ;           ;                                   ;             ; u_timing|x[3]~_Duplicate_5                                                                ;
+;     --          ;           ;                                   ;             ; u_timing|x[2]~_Duplicate_4                                                                ;
+;     --          ;           ;                                   ;             ; u_timing|x[3]~_Duplicate_6                                                                ;
+;     --          ;           ;                                   ;             ; u_timing|x[4]~_Duplicate_8                                                                ;
+;     --          ;           ;                                   ;             ; u_timing|x[6]~_Duplicate_12                                                               ;
+;     --          ;           ;                                   ;             ; u_timing|x[2]~_Duplicate_3                                                                ;
+; long high speed ; left      ; [(84, 24), (95, 31)]              ; 49.342 %    ;    High Routing Fan-Out                                                                   ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~6                                                                          ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~1                                                                          ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~11                                                                         ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~16                                                                         ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~21                                                                         ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~26                                                                         ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[10]                                                                      ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[0]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[1]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[2]~_Duplicate                                                            ;
+; long high speed ; left      ; [(84, 24), (95, 31)]              ; 49.342 %    ;    Long Distance                                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[5]                                                                       ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[3]                                                                       ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[2]                                                                       ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[10]                                                                      ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[4]                                                                       ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[3]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[4]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[6]                                                                       ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[8]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[9]~_Duplicate                                                            ;
+; long high speed ; up        ; [(108, 24), (119, 31)]            ; 75.000 %    ;    High Routing Fan-Out                                                                   ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~21                                                                         ;
+;     --          ;           ;                                   ;             ; u_reader|add_0~26                                                                         ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[10]                                                                      ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[1]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[2]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[3]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[4]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[5]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[0]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[7]~_Duplicate                                                            ;
+; long high speed ; up        ; [(108, 24), (119, 31)]            ; 75.000 %    ;    Long Distance                                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[10]                                                                      ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[3]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[4]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[8]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[9]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[5]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[1]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[7]~_Duplicate                                                            ;
+;     --          ;           ;                                   ;             ; u_frame_rx|waddr[10]~_Duplicate                                                           ;
+;     --          ;           ;                                   ;             ; u_timing|x[4]~_Duplicate_8                                                                ;
+; long high speed ; down      ; [(96, 40), (107, 47)]             ; 90.476 %    ;    High Routing Fan-Out                                                                   ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a48~PORTBDATAOUT0  ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a96~PORTBDATAOUT0  ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a144~PORTBDATAOUT0 ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a168~PORTBDATAOUT0 ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a240~PORTBDATAOUT0 ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a312~PORTBDATAOUT0 ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a336~PORTBDATAOUT0 ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a432~PORTBDATAOUT0 ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a528~PORTBDATAOUT0 ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a624~PORTBDATAOUT0 ;
+; long high speed ; down      ; [(96, 40), (107, 47)]             ; 90.476 %    ;    Long Distance                                                                          ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a48~PORTBDATAOUT0  ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a96~PORTBDATAOUT0  ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a51~PORTBDATAOUT0  ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a168~PORTBDATAOUT0 ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a57~PORTBDATAOUT0  ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a53~PORTBDATAOUT0  ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a103~PORTBDATAOUT0 ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a105~PORTBDATAOUT0 ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a50~PORTBDATAOUT0  ;
+;     --          ;           ;                                   ;             ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a171~PORTBDATAOUT0 ;
++-----------------+-----------+-----------------------------------+-------------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Peak Total Grid Crossings                                                                            ;
++-------------------------------------------------------------------------------+----------------------+
+; Net Name                                                                      ; Total Grid Crossings ;
++-------------------------------------------------------------------------------+----------------------+
+; u_reader|add_0~21                                                             ; 34                   ;
+; u_frame_rx|waddr[10]                                                          ; 32                   ;
+; u_reader|add_0~16                                                             ; 32                   ;
+; u_reader|add_0~11                                                             ; 32                   ;
+; u_reader|add_0~6                                                              ; 32                   ;
+; u_reader|add_0~1                                                              ; 31                   ;
+; u_timing|x[6]~_Duplicate                                                      ; 30                   ;
+; u_reader|add_0~26                                                             ; 29                   ;
+; u_timing|x[5]~_Duplicate                                                      ; 28                   ;
+; u_timing|x[4]~_Duplicate                                                      ; 27                   ;
+; u_timing|x[3]~_Duplicate                                                      ; 27                   ;
+; u_timing|x[2]~_Duplicate                                                      ; 27                   ;
+; u_frame_rx|waddr[9]~_Duplicate                                                ; 26                   ;
+; u_frame_rx|waddr[8]~_Duplicate                                                ; 26                   ;
+; u_frame_rx|waddr[6]~_Duplicate                                                ; 26                   ;
+; u_frame_rx|waddr[4]~_Duplicate                                                ; 26                   ;
+; u_frame_rx|waddr[3]~_Duplicate                                                ; 26                   ;
+; u_frame_rx|waddr[2]~_Duplicate                                                ; 26                   ;
+; u_frame_rx|waddr[0]~_Duplicate                                                ; 26                   ;
+; u_frame_rx|waddr[7]~_Duplicate                                                ; 24                   ;
+; u_frame_rx|waddr[5]~_Duplicate                                                ; 24                   ;
+; u_frame_rx|waddr[1]~_Duplicate                                                ; 24                   ;
+; u_frame_rx|waddr[1]                                                           ; 23                   ;
+; u_frame_rx|waddr[9]                                                           ; 22                   ;
+; u_frame_rx|waddr[8]                                                           ; 22                   ;
+; u_frame_rx|waddr[7]                                                           ; 22                   ;
+; u_frame_rx|waddr[6]                                                           ; 22                   ;
+; u_frame_rx|waddr[5]                                                           ; 22                   ;
+; u_frame_rx|waddr[4]                                                           ; 22                   ;
+; u_frame_rx|waddr[3]                                                           ; 22                   ;
+; u_frame_rx|waddr[2]                                                           ; 22                   ;
+; u_frame_rx|waddr[0]                                                           ; 22                   ;
+; u_timing|x[6]                                                                 ; 21                   ;
+; u_timing|x[3]                                                                 ; 21                   ;
+; u_timing|x[2]                                                                 ; 21                   ;
+; u_frame_rx|waddr[10]~_Duplicate                                               ; 21                   ;
+; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|address_reg_b[0] ; 20                   ;
+; u_frame_rx|waddr[10]~_Duplicate_22                                            ; 20                   ;
+; u_timing|x[5]                                                                 ; 20                   ;
+; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|address_reg_b[4] ; 19                   ;
+; u_timing|x[4]                                                                 ; 19                   ;
+; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|address_reg_b[1] ; 18                   ;
+; u_timing|x[6]~_Duplicate_12                                                   ; 18                   ;
+; u_timing|x[5]~_Duplicate_10                                                   ; 18                   ;
+; u_timing|x[4]~_Duplicate_8                                                    ; 18                   ;
+; u_timing|x[3]~_Duplicate_6                                                    ; 18                   ;
+; u_timing|x[2]~_Duplicate_4                                                    ; 18                   ;
+; u_timing|x[6]~_Duplicate_11                                                   ; 17                   ;
+; u_timing|x[3]~_Duplicate_5                                                    ; 17                   ;
+; u_timing|x[2]~_Duplicate_3                                                    ; 17                   ;
++-------------------------------------------------------------------------------+----------------------+
+
+
+--------------------------------------------
+; Global Router Congestion Hotspot Summary ;
+--------------------------------------------
+No congestion hotspots found where global router short wire usage exceeded 100%.
+If the design is hard to route, use other techniques to analyze congestion. Refer to the Estimated Delay Added for Hold Timing section in the Fitter report and routing utilization in the Chip Planner.
+
+

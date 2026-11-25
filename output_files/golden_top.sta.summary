@@ -1,0 +1,85 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'u_V_PLL|iopll_0_outclk0'
+Slack : 1.888
+TNS   : 0.000
+Corner: Slow fix6a 0C Model
+
+Type  : Setup 'u_V_PLL|iopll_0_refclk'
+Slack : 16.242
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Setup 'CLK_400K'
+Slack : 16.480
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Hold 'u_V_PLL|iopll_0_refclk'
+Slack : 0.001
+TNS   : 0.000
+Corner: Slow fix6 100C Model
+
+Type  : Hold 'CLK_400K'
+Slack : 0.013
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Hold 'u_V_PLL|iopll_0_outclk0'
+Slack : 0.046
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Recovery 'CLK_400K'
+Slack : 16.915
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Recovery 'u_V_PLL|iopll_0_refclk'
+Slack : 17.674
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Removal 'CLK_400K'
+Slack : 0.002
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Removal 'u_V_PLL|iopll_0_refclk'
+Slack : 0.177
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Minimum Pulse Width 'internal_clk'
+Slack : 2.356
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'u_V_PLL|iopll_0_outclk0'
+Slack : 2.553
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'u_V_PLL|iopll_0|tennm_ph2_iopll|ref_clk0'
+Slack : 8.961
+TNS   : 0.000
+Corner: Slow fix6a 0C Model
+
+Type  : Minimum Pulse Width 'u_V_PLL|iopll_0_refclk'
+Slack : 9.314
+TNS   : 0.000
+Corner: Slow fix6a 0C Model
+
+Type  : Minimum Pulse Width 'u_V_PLL|iopll_0_n_cnt_clk'
+Slack : 29.593
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'CLK_400K'
+Slack : 1279.426
+TNS   : 0.000
+Corner: Slow fix6a 0C Model
+
+------------------------------------------------------------

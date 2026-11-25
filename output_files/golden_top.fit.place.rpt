@@ -1,0 +1,554 @@
+Fitter Place Stage Report for golden_top
+Wed Nov 25 18:00:29 2026
+Quartus Prime Version 26.1.1 Build 130 08/06/2026 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Resource Usage Summary
+  3. Fitter Resource Utilization by Entity
+  4. Fitter Partition Statistics
+  5. Global & Other Fast Signals Summary
+  6. Global Signal Visualization
+  7. Global & Other Fast Signals Details
+  8. Fitter Duplication Summary
+  9. Non-Global High Fan-Out Signals
+ 10. Fitter RAM Summary
+ 11. Fitter Physical RAM Information
+ 12. Place Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2026  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++---------------------------------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                                               ;
++-------------------------------------------------------------+-----------------------+-------+
+; Resource                                                    ; Usage                 ; %     ;
++-------------------------------------------------------------+-----------------------+-------+
+; Usage Report Generated after: Place                         ;                       ;       ;
+;                                                             ;                       ;       ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 870 / 45,800          ; 2 %   ;
+; ALMs needed [=A-B+C]                                        ; 870                   ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 997 / 45,800          ; 2 %   ;
+;         [a] ALMs used for LUT logic and register circuitry  ; 214                   ;       ;
+;         [b] ALMs used for LUT logic                         ; 721                   ;       ;
+;         [c] ALMs used for register circuitry                ; 62                    ;       ;
+;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ;       ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 148 / 45,800          ; < 1 % ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 21 / 45,800           ; < 1 % ;
+;         [a] Due to location constrained logic               ; 0                     ;       ;
+;         [b] Due to LAB-wide signal conflicts                ; 1                     ;       ;
+;         [c] Due to LAB input limits                         ; 20                    ;       ;
+;         [d] Due to virtual I/Os                             ; 0                     ;       ;
+;                                                             ;                       ;       ;
+; Difficulty packing design                                   ; Low                   ;       ;
+;                                                             ;                       ;       ;
+; Total LABs:  partially or completely used                   ; 196 / 4,580           ; 4 %   ;
+;     -- Logic LABs                                           ; 196                   ;       ;
+;     -- Memory LABs (up to half of total LABs)               ; 0                     ;       ;
+;                                                             ;                       ;       ;
+; Combinational ALUT usage for logic                          ; 1,266                 ;       ;
+;     -- 8 input functions                                    ; 255                   ;       ;
+;     -- 7 input functions                                    ; 14                    ;       ;
+;     -- 6 input functions                                    ; 96                    ;       ;
+;     -- 5 input functions                                    ; 348                   ;       ;
+;     -- 4 input functions                                    ; 159                   ;       ;
+;     -- <=3 input functions                                  ; 394                   ;       ;
+; Combinational ALUT usage for route-throughs                 ; 17                    ;       ;
+;                                                             ;                       ;       ;
+; Dedicated logic registers                                   ; 578                   ;       ;
+;     -- By type:                                             ;                       ;       ;
+;         -- LAB logic registers:                             ;                       ;       ;
+;             -- Primary logic registers                      ; 552 / 91,600          ; < 1 % ;
+;             -- Secondary logic registers                    ; 12 / 91,600           ; < 1 % ;
+;         -- Hyper-Registers:                                 ; 14                    ;       ;
+;                                                             ;                       ;       ;
+; Register control circuitry for power estimation             ; 0                     ;       ;
+;                                                             ;                       ;       ;
+; ALMs adjustment for power estimation                        ; 68                    ;       ;
+;                                                             ;                       ;       ;
+; I/O pins                                                    ; 43 / 208              ; 21 %  ;
+;     -- Clock pins                                           ; 4 / 4                 ; 100 % ;
+;     -- Dedicated input pins                                 ; 3 / 6                 ; 50 %  ;
+;                                                             ;                       ;       ;
+; M20K blocks                                                 ; 191 / 353             ; 54 %  ;
+; Total MLAB memory bits                                      ; 0                     ;       ;
+; Total block memory bits                                     ; 3,110,400 / 7,229,440 ; 43 %  ;
+;                                                             ;                       ;       ;
+; DSP Blocks Needed [=A+B+C-D]                                ; 0 / 184               ; 0 %   ;
+;     [A] Total Fixed Point DSP Blocks                        ; 0                     ;       ;
+;     [B] Total Floating Point DSP Blocks                     ; 0                     ;       ;
+;     [C] Total DSP_PRIME Blocks                              ; 0                     ;       ;
+;     [D] Estimate of DSP Blocks recoverable by dense merging ; 0                     ;       ;
+;                                                             ;                       ;       ;
+; IOPLLs                                                      ; 1 / 11                ; 9 %   ;
+; Global signals                                              ; 3                     ;       ;
+; LVDS_RX blocks                                              ; 0 / 96                ; 0 %   ;
+; HMC blocks                                                  ; 0 / 4                 ; 0 %   ;
+; Maximum fan-out                                             ; 1785                  ;       ;
+; Highest non-global fan-out                                  ; 1536                  ;       ;
+; Total fan-out                                               ; 47826                 ;       ;
+; Average fan-out                                             ; 13.50                 ;       ;
++-------------------------------------------------------------+-----------------------+-------+
+The Fitter Resource Usage Summary report displays a detailed analysis of logic utilization based on calculations of ALM usage. Refer to <a class="xref" href="https://www.intel.com/content/www/us/en/programmable/quartushelp/current/index.htm#mapIdTopics/mwh1465496451103.htm" target="_blank">Fitter Resource Usage Summary Report</a> in the <i>Intel® Quartus® Prime Pro Edition Help</i> for more information.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+--------------------------+----------------------------------------+---------------------------------------------------+------+--------+----------------------------------------------------------------------+---------------------------------------------------------------+-------------------+
+; Compilation Hierarchy Node         ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M20Ks ; DSP Blocks needed [=A-B] ; [A] DSP Blocks used in final placement ; [B] Estimate of DSPs recoverable by dense merging ; Pins ; IOPLLs ; Full Hierarchy Name                                                  ; Entity Name                                                   ; Library Name      ;
++------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+--------------------------+----------------------------------------+---------------------------------------------------+------+--------+----------------------------------------------------------------------+---------------------------------------------------------------+-------------------+
+; |                                  ; 869.4 (29.8)         ; 996.5 (34.0)                     ; 147.0 (4.8)                                       ; 19.9 (0.6)                       ; 0.0 (0.0)            ; 1266 (55)           ; 578 (32)                  ; 0 (0)         ; 3110400           ; 191   ; 0                        ; 0                                      ; 0                                                 ; 85   ; 1 (0)  ; |                                                                    ; golden_top                                                    ; altera_work       ;
+;    |auto_fab_0|                    ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; auto_fab_0                                                           ; alt_sld_fab_0                                                 ; alt_sld_fab_0     ;
+;       |alt_sld_fab_0|              ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; auto_fab_0|alt_sld_fab_0                                             ; alt_sld_fab_0_alt_sld_fab_0_10_fkimwiy                        ; N/A               ;
+;          |alt_sld_fab_0|           ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0                               ; alt_sld_fab_0_alt_sld_fab_1920_hwoxyki                        ; N/A               ;
+;             |agilexconfigreset|    ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|agilexconfigreset             ; alt_sld_fab_0_intel_agilex_reset_release_from_sdm_203_poqcpxq ; N/A               ;
+;                |user_reset|        ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|agilexconfigreset|user_reset  ; intel_agilex_reset_release_from_sdm_atom                      ; N/A               ;
+;    |u_RESET_DELY|                  ; 24.5 (24.5)          ; 25.0 (25.0)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 45 (45)             ; 32 (32)                   ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_RESET_DELY                                                         ; RESET_DELY                                                    ; altera_work       ;
+;    |u_TFP410_I2C|                  ; 208.4 (74.5)         ; 213.5 (77.0)                     ; 6.1 (2.7)                                         ; 1.0 (0.2)                        ; 0.0 (0.0)            ; 331 (117)           ; 175 (58)                  ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_TFP410_I2C                                                         ; TFP410_I2C                                                    ; altera_work       ;
+;       |I2C_READ_DATA_i|            ; 36.2 (36.2)          ; 37.5 (37.5)                      ; 1.3 (1.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 58 (58)             ; 33 (33)                   ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_TFP410_I2C|I2C_READ_DATA_i                                         ; I2C_READ_DATA                                                 ; altera_work       ;
+;       |I2C_WRITE_POINTER_i|        ; 48.8 (48.8)          ; 50.0 (50.0)                      ; 1.5 (1.5)                                         ; 0.3 (0.3)                        ; 0.0 (0.0)            ; 71 (71)             ; 27 (27)                   ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_TFP410_I2C|I2C_WRITE_POINTER_i                                     ; I2C_WRITE_POINTER                                             ; altera_work       ;
+;       |I2C_WRITE_i|                ; 26.4 (26.4)          ; 26.5 (26.5)                      ; 0.5 (0.5)                                         ; 0.4 (0.4)                        ; 0.0 (0.0)            ; 44 (44)             ; 23 (23)                   ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_TFP410_I2C|I2C_WRITE_i                                             ; I2C_WRITE                                                     ; altera_work       ;
+;       |K0|                         ; 22.6 (22.6)          ; 22.5 (22.5)                      ; 0.0 (0.0)                                         ; 0.1 (0.1)                        ; 0.0 (0.0)            ; 41 (41)             ; 34 (34)                   ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_TFP410_I2C|K0                                                      ; CLOCKMEM                                                      ; altera_work       ;
+;    |u_V_PLL|                       ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 1 (0)  ; u_V_PLL                                                              ; V_PLL                                                         ; V_PLL             ;
+;       |iopll_0|                    ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 1 (1)  ; u_V_PLL|iopll_0                                                      ; V_PLL_altera_iopll_2110_ctesofa                               ; altera_iopll_2110 ;
+;    |u_frame_buffer|                ; 449.5 (6.8)          ; 530.7 (7.7)                      ; 98.3 (1.9)                                        ; 17.1 (1.0)                       ; 0.0 (0.0)            ; 579 (0)             ; 30 (24)                   ; 0 (0)         ; 3110400           ; 191   ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_frame_buffer                                                       ; frame_buffer                                                  ; altera_work       ;
+;       |mem_rtl_0|                  ; 442.7 (0.0)          ; 523.0 (0.0)                      ; 96.4 (0.0)                                        ; 16.2 (0.0)                       ; 0.0 (0.0)            ; 579 (0)             ; 6 (0)                     ; 0 (0)         ; 3110400           ; 191   ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_frame_buffer|mem_rtl_0                                             ; altera_syncram                                                ; work              ;
+;          |auto_generated|          ; 442.7 (0.0)          ; 523.0 (0.0)                      ; 96.4 (0.0)                                        ; 16.2 (0.0)                       ; 0.0 (0.0)            ; 579 (0)             ; 6 (0)                     ; 0 (0)         ; 3110400           ; 191   ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_frame_buffer|mem_rtl_0|auto_generated                              ; altera_syncram_k8qg1                                          ; altera_work       ;
+;             |altera_syncram_impl1| ; 442.7 (1.5)          ; 523.0 (1.5)                      ; 96.4 (0.0)                                        ; 16.2 (0.0)                       ; 0.0 (0.0)            ; 579 (0)             ; 6 (6)                     ; 0 (0)         ; 3110400           ; 191   ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1         ; altera_syncram_impl_qerf                                      ; altera_work       ;
+;                |decode3|           ; 27.7 (27.7)          ; 37.2 (37.2)                      ; 9.5 (9.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 75 (75)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|decode3 ; decode_5os4                                                   ; altera_work       ;
+;                |mux4|              ; 413.6 (413.6)        ; 484.3 (484.3)                    ; 87.0 (87.0)                                       ; 16.2 (16.2)                      ; 0.0 (0.0)            ; 504 (504)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|mux4    ; mux_ansq                                                      ; altera_work       ;
+;    |u_frame_rx|                    ; 45.7 (45.7)          ; 62.2 (62.2)                      ; 16.9 (16.9)                                       ; 0.5 (0.5)                        ; 0.0 (0.0)            ; 38 (38)             ; 113 (113)                 ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_frame_rx                                                           ; uart_frame_rx                                                 ; altera_work       ;
+;    |u_heartbeat|                   ; 23.6 (23.6)          ; 24.5 (24.5)                      ; 0.9 (0.9)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 43 (43)             ; 38 (38)                   ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_heartbeat                                                          ; CLOCKMEM                                                      ; altera_work       ;
+;    |u_proc|                        ; 12.0 (12.0)          ; 12.0 (12.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 24 (24)             ; 24 (24)                   ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_proc                                                               ; pixel_proc                                                    ; altera_work       ;
+;    |u_reader|                      ; 13.5 (13.5)          ; 14.5 (14.5)                      ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 32 (32)             ; 12 (12)                   ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_reader                                                             ; img_reader                                                    ; altera_work       ;
+;    |u_sync_delay|                  ; 1.0 (1.0)            ; 1.3 (1.3)                        ; 0.5 (0.5)                                         ; 0.1 (0.1)                        ; 0.0 (0.0)            ; 0 (0)               ; 6 (6)                     ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_sync_delay                                                         ; sync_delay                                                    ; altera_work       ;
+;    |u_timing|                      ; 28.9 (28.9)          ; 41.2 (41.2)                      ; 12.8 (12.8)                                       ; 0.5 (0.5)                        ; 0.0 (0.0)            ; 56 (56)             ; 74 (74)                   ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_timing                                                             ; video_timing                                                  ; altera_work       ;
+;    |u_uart_rx|                     ; 32.3 (32.3)          ; 37.7 (37.7)                      ; 5.3 (5.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 63 (63)             ; 42 (42)                   ; 0 (0)         ; 0                 ; 0     ; 0                        ; 0                                      ; 0                                                 ; 0    ; 0 (0)  ; u_uart_rx                                                            ; uart_rx                                                       ; altera_work       ;
++------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+--------------------------+----------------------------------------+---------------------------------------------------+------+--------+----------------------------------------------------------------------+---------------------------------------------------------------+-------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                           ;
++-------------------------------------------------------+-------------------------+---------------------+
+; Statistic                                             ; |                       ; auto_fab_0          ;
++-------------------------------------------------------+-------------------------+---------------------+
+; ALMs needed [=A-B+C]                                  ; 869.4 / 45800 ( 1 % )   ; 0.0 / 45800 ( 0 % ) ;
+;     [A] ALMs used in final placement                  ; 996.5 / 45800 ( 2 % )   ; 0.0 / 45800 ( 0 % ) ;
+;     [B] Estimate of ALMs recoverable by dense packing ; 147.0 / 45800 ( < 1 % ) ; 0.0 / 45800 ( 0 % ) ;
+;     [C] Estimate of ALMs unavailable                  ; 19.9 / 45800 ( < 1 % )  ; 0.0 / 45800 ( 0 % ) ;
+; ALMs used for memory                                  ; 0.0                     ; 0.0                 ;
+; Combinational ALUTs                                   ; 1266                    ; 0                   ;
+; Dedicated Logic Registers                             ; 578 / 183200 ( < 1 % )  ; 0 / 183200 ( 0 % )  ;
+; I/O Registers                                         ; 0                       ; 0                   ;
+; Block Memory Bits                                     ; 3110400                 ; 0                   ;
+; M20Ks                                                 ; 191 / 353 ( 54 % )      ; 0 / 353 ( 0 % )     ;
+; DSP Blocks needed [=A-B]                              ; 0 / 184 ( 0 % )         ; 0 / 184 ( 0 % )     ;
+;     [A] DSP Blocks used in final placement            ; 0 / 184 ( 0 % )         ; 0 / 184 ( 0 % )     ;
+;     [B] Estimate of DSPs recoverable by dense merging ; 0 / 184 ( 0 % )         ; 0 / 184 ( 0 % )     ;
+; Pins                                                  ; 85                      ; 0                   ;
+; IOPLLs                                                ; 1                       ; 0                   ;
+;                                                       ;                         ;                     ;
+; Region Placement                                      ; -                       ; -                   ;
+;                                                       ;                         ;                     ;
+; Partition Ports                                       ;                         ;                     ;
+;     -- Input Ports                                    ; 8                       ; 0                   ;
+;     -- Output Ports                                   ; 34                      ; 1                   ;
+;                                                       ;                         ;                     ;
+; Connections                                           ;                         ;                     ;
+;     -- Input Connections                              ; 0                       ; 3                   ;
+;     -- Registered Input Connections                   ; 0                       ; 0                   ;
+;     -- Output Connections                             ; 3                       ; 0                   ;
+;     -- Registered Output Connections                  ; 0                       ; 0                   ;
+;                                                       ;                         ;                     ;
+; Internal Connections                                  ;                         ;                     ;
+;     -- Total Connections                              ; 49350                   ; 3                   ;
+;     -- Registered Connections                         ; 31156                   ; 0                   ;
+;                                                       ;                         ;                     ;
+; External Connections                                  ;                         ;                     ;
+;     -- |                                              ; 0                       ; 3                   ;
+;     -- auto_fab_0                                     ; 3                       ; 0                   ;
++-------------------------------------------------------+-------------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals Summary                                                                ;
++--------------------------------------------+------------------+---------+--------------------------+
+; Name                                       ; Location         ; Fan-Out ; Clock Region             ;
++--------------------------------------------+------------------+---------+--------------------------+
+; u_V_PLL|iopll_0|tennm_ph2_iopll~O_OUT_CLK0 ; IOPLL_X63_Y53_N0 ; 1727    ; Sectors (0, 0) to (1, 0) ;
+; u_TFP410_I2C|K0|CK_1HZ                     ; FF_X61_Y50_N17   ; 141     ; Sector (1, 0)            ;
+; CLOCK0_50                                  ; PIN_K43          ; 1785    ; Sectors (0, 0) to (1, 0) ;
++--------------------------------------------+------------------+---------+--------------------------+
+
+
+-------------------------------
+; Global Signal Visualization ;
+-------------------------------
+This report is unavailable in plain text report export.
+
+
++--------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals Details                                                              ;
++---------------------------------------------------+----------------------------------------------+
+; Property                                          ; Value                                        ;
++---------------------------------------------------+----------------------------------------------+
+; Name                                              ; u_V_PLL|iopll_0|tennm_ph2_iopll~O_OUT_CLK0   ;
+;     -- SDC Name                                   ; u_V_PLL|iopll_0_outclk0                      ;
+;     -- Source Node                                ; u_V_PLL|iopll_0|tennm_ph2_iopll              ;
+;     -- Source Type                                ; IOPLL                                        ;
+;     -- Source Location                            ; IOPLL_X63_Y53_N0                             ;
+;     -- Fan-Out                                    ; 1727                                         ;
+;     -- Promotion Reason                           ; Mandatory                                    ;
+;     -- Clock Region                               ; Sectors (0, 0) to (1, 0)                     ;
+;     -- Clock Partition Ownership for Preservation ; root_partition                               ;
+;     -- Clock Region Size (in Sectors)             ; 2 x 1 (2 total)                              ;
+;     -- Clock Region Bounding Box                  ; (0, 5) to (121, 51)                          ;
+;     -- Clock Region Constraint                    ; SX0 SY0 SX1 SY0                              ;
+;     -- Terminating Spine Index                    ; 30                                           ;
+;     -- Path Length                                ; 0.5 clock sector wire(s) and 0 layer jump(s) ;
+;         -- Length from Clock Source to Clock Tree ; 0.5 clock sector wire(s) and 0 layer jump(s) ;
+;         -- Clock Tree Length                      ; 0.0 clock sector wire(s) and 0 layer jump(s) ;
+;                                                   ;                                              ;
+; Name                                              ; u_TFP410_I2C|K0|CK_1HZ                       ;
+;     -- SDC Name                                   ; CLK_400K                                     ;
+;     -- Source Node                                ; u_TFP410_I2C|K0|CK_1HZ                       ;
+;     -- Source Type                                ; Register cell                                ;
+;     -- Source Location                            ; FF_X61_Y50_N17                               ;
+;     -- Fan-Out                                    ; 141                                          ;
+;     -- Promotion Reason                           ; Mandatory                                    ;
+;     -- Clock Region                               ; Sector (1, 0)                                ;
+;     -- Clock Partition Ownership for Preservation ; root_partition                               ;
+;     -- Clock Region Size (in Sectors)             ; 1 x 1 (1 total)                              ;
+;     -- Clock Region Bounding Box                  ; (61, 5) to (121, 51)                         ;
+;     -- Clock Region Constraint                    ; SX1 SY0 SX1 SY0                              ;
+;     -- Terminating Spine Index                    ; 4                                            ;
+;     -- Path Length                                ; 0.5 clock sector wire(s) and 0 layer jump(s) ;
+;         -- Length from Clock Source to Clock Tree ; 0.5 clock sector wire(s) and 0 layer jump(s) ;
+;         -- Clock Tree Length                      ; 0.0 clock sector wire(s) and 0 layer jump(s) ;
+;                                                   ;                                              ;
+; Name                                              ; CLOCK0_50                                    ;
+;     -- Source Node                                ; CLOCK0_50~pad                                ;
+;     -- Source Type                                ; I/O pad                                      ;
+;     -- Source Location                            ; PIN_K43                                      ;
+;     -- Fan-Out                                    ; 1785                                         ;
+;     -- Promotion Reason                           ; Mandatory                                    ;
+;     -- Clock Region                               ; Sectors (0, 0) to (1, 0)                     ;
+;     -- Clock Partition Ownership for Preservation ; root_partition                               ;
+;     -- Clock Region Size (in Sectors)             ; 2 x 1 (2 total)                              ;
+;     -- Clock Region Bounding Box                  ; (0, 5) to (121, 51)                          ;
+;     -- Clock Region Constraint                    ; SX0 SY0 SX1 SY0                              ;
+;     -- Terminating Spine Index                    ; 20                                           ;
+;     -- Path Length                                ; 0.5 clock sector wire(s) and 0 layer jump(s) ;
+;         -- Length from Clock Source to Clock Tree ; 0.5 clock sector wire(s) and 0 layer jump(s) ;
+;         -- Clock Tree Length                      ; 0.0 clock sector wire(s) and 0 layer jump(s) ;
++---------------------------------------------------+----------------------------------------------+
+To visualize how these signals are routed, use the Chip Planner task "Report Clock Details".
+To manually specify the size and placement of these signals, use the Assignment Editor to make Clock Region assignments.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Duplication Summary                                                                                                        ;
++----------------------+--------------------+--------------------+---------------+----------------------+---------------------------+
+; Node Name            ; Candidate Reason   ; Duplication Status ; Total fan-out ; Number of Duplicates ; Average Duplicate fan-out ;
++----------------------+--------------------+--------------------+---------------+----------------------+---------------------------+
+; u_timing|x[2]        ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_timing|x[3]        ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_timing|x[4]        ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_timing|x[5]        ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_timing|x[6]        ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_frame_rx|waddr[0]  ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_frame_rx|waddr[1]  ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_frame_rx|waddr[2]  ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_frame_rx|waddr[3]  ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_frame_rx|waddr[4]  ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_frame_rx|waddr[5]  ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_frame_rx|waddr[6]  ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_frame_rx|waddr[7]  ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_frame_rx|waddr[8]  ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_frame_rx|waddr[9]  ; Auto: High Fan-out ; Accepted           ; 1536          ; 4                    ; 384.00                    ;
+; u_frame_rx|waddr[10] ; Auto: High Fan-out ; Accepted           ; 1512          ; 4                    ; 378.00                    ;
++----------------------+--------------------+--------------------+---------------+----------------------+---------------------------+
+Disclaimer: Duplicate registers created may later be merged for timing optimization in the final design
+
+
++---------------------------------------------------+
+; Non-Global High Fan-Out Signals                   ;
++----------------------+---------+------------------+
+; Name                 ; Fan-Out ; Physical Fan-Out ;
++----------------------+---------+------------------+
+; u_reader|add_0~21    ; 1536    ; 191              ;
+; u_reader|add_0~16    ; 1536    ; 191              ;
+; u_reader|add_0~11    ; 1536    ; 191              ;
+; u_reader|add_0~6     ; 1536    ; 191              ;
+; u_reader|add_0~1     ; 1536    ; 191              ;
+; u_reader|add_0~26    ; 1512    ; 189              ;
+; u_frame_rx|waddr[10] ; 674     ; 83               ;
++----------------------+---------+------------------+
+Fan-Out is the number of connections the specified signal drives on the netlist.
+Physical Fan-Out is the number of connections needed to route the signal, which may be lower if multiple netlist destinations share the same routing port.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++-----------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-------------+-------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+-----------------+-----------------+----------+------------------------+------------------+------------------------+
+; Name                                                                        ; Type ; Mode             ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Logical Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M20K blocks ; MLABs ; MIF                                                                   ; Location                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Mixed Port RDW Mode ; Port A RDW Mode ; Port B RDW Mode ; ECC Mode ; ECC Pipeline Registers ; Performance Mode ; Fits in MLABs          ;
++-----------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-------------+-------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+-----------------+-----------------+----------+------------------------+------------------+------------------------+
+; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ; M20K ; Simple Dual Port ; Dual Clocks ; 129600       ; 24           ; 129600       ; 24           ; yes                    ; no                      ; yes                    ; no                      ; 3110400      ; 129600                      ; 24                          ; 129600                      ; 24                          ; 3110400             ; 191.000     ; 0.000 ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/mif/image.mif ; M20K_X116_Y28_N0, M20K_X116_Y34_N0, M20K_X116_Y50_N0, M20K_X116_Y40_N0, M20K_X116_Y49_N0, M20K_X116_Y39_N0, M20K_X97_Y43_N0, M20K_X116_Y48_N0, M20K_X116_Y27_N0, M20K_X116_Y31_N0, M20K_X116_Y45_N0, M20K_X116_Y29_N0, M20K_X97_Y27_N0, M20K_X97_Y40_N0, M20K_X97_Y51_N0, M20K_X97_Y35_N0, M20K_X97_Y28_N0, M20K_X116_Y25_N0, M20K_X116_Y36_N0, M20K_X97_Y30_N0, M20K_X116_Y30_N0, M20K_X116_Y38_N0, M20K_X116_Y35_N0, M20K_X97_Y36_N0, M20K_X116_Y41_N0, M20K_X116_Y43_N0, M20K_X116_Y47_N0, M20K_X92_Y39_N0, M20K_X116_Y44_N0, M20K_X116_Y46_N0, M20K_X97_Y44_N0, M20K_X97_Y33_N0, M20K_X92_Y41_N0, M20K_X92_Y38_N0, M20K_X97_Y50_N0, M20K_X97_Y47_N0, M20K_X116_Y24_N0, M20K_X97_Y39_N0, M20K_X97_Y45_N0, M20K_X97_Y48_N0, M20K_X116_Y26_N0, M20K_X92_Y35_N0, M20K_X97_Y49_N0, M20K_X92_Y34_N0, M20K_X92_Y32_N0, M20K_X92_Y40_N0, M20K_X97_Y38_N0, M20K_X97_Y34_N0, M20K_X116_Y33_N0, M20K_X97_Y46_N0, M20K_X97_Y29_N0, M20K_X97_Y31_N0, M20K_X116_Y32_N0, M20K_X97_Y42_N0, M20K_X116_Y37_N0, M20K_X92_Y36_N0, M20K_X116_Y42_N0, M20K_X97_Y41_N0, M20K_X97_Y37_N0, M20K_X92_Y33_N0, M20K_X97_Y32_N0, M20K_X92_Y42_N0, M20K_X92_Y37_N0, M20K_X97_Y26_N0, M20K_X116_Y21_N0, M20K_X116_Y17_N0, M20K_X92_Y8_N0, M20K_X92_Y17_N0, M20K_X92_Y5_N0, M20K_X116_Y8_N0, M20K_X97_Y9_N0, M20K_X97_Y6_N0, M20K_X116_Y11_N0, M20K_X97_Y13_N0, M20K_X92_Y24_N0, M20K_X92_Y15_N0, M20K_X92_Y6_N0, M20K_X116_Y12_N0, M20K_X65_Y13_N0, M20K_X97_Y16_N0, M20K_X92_Y12_N0, M20K_X92_Y20_N0, M20K_X97_Y7_N0, M20K_X92_Y14_N0, M20K_X92_Y23_N0, M20K_X92_Y9_N0, M20K_X97_Y12_N0, M20K_X92_Y11_N0, M20K_X92_Y21_N0, M20K_X97_Y25_N0, M20K_X92_Y16_N0, M20K_X97_Y23_N0, M20K_X65_Y11_N0, M20K_X65_Y15_N0, M20K_X65_Y14_N0, M20K_X65_Y16_N0, M20K_X116_Y19_N0, M20K_X116_Y15_N0, M20K_X116_Y13_N0, M20K_X116_Y14_N0, M20K_X116_Y20_N0, M20K_X116_Y23_N0, M20K_X116_Y6_N0, M20K_X116_Y16_N0, M20K_X97_Y8_N0, M20K_X97_Y5_N0, M20K_X116_Y10_N0, M20K_X116_Y22_N0, M20K_X97_Y11_N0, M20K_X116_Y9_N0, M20K_X116_Y7_N0, M20K_X92_Y13_N0, M20K_X97_Y20_N0, M20K_X116_Y18_N0, M20K_X92_Y10_N0, M20K_X97_Y17_N0, M20K_X97_Y15_N0, M20K_X97_Y14_N0, M20K_X97_Y18_N0, M20K_X97_Y10_N0, M20K_X92_Y18_N0, M20K_X97_Y19_N0, M20K_X92_Y22_N0, M20K_X92_Y19_N0, M20K_X97_Y22_N0, M20K_X97_Y24_N0, M20K_X97_Y21_N0, M20K_X56_Y32_N0, M20K_X56_Y29_N0, M20K_X92_Y25_N0, M20K_X65_Y34_N0, M20K_X65_Y45_N0, M20K_X65_Y41_N0, M20K_X65_Y32_N0, M20K_X56_Y34_N0, M20K_X65_Y36_N0, M20K_X56_Y39_N0, M20K_X65_Y12_N0, M20K_X65_Y40_N0, M20K_X56_Y19_N0, M20K_X56_Y23_N0, M20K_X65_Y19_N0, M20K_X56_Y24_N0, M20K_X65_Y10_N0, M20K_X65_Y46_N0, M20K_X56_Y25_N0, M20K_X65_Y24_N0, M20K_X56_Y20_N0, M20K_X65_Y33_N0, M20K_X65_Y17_N0, M20K_X65_Y20_N0, M20K_X56_Y33_N0, M20K_X56_Y30_N0, M20K_X56_Y37_N0, M20K_X65_Y21_N0, M20K_X65_Y22_N0, M20K_X56_Y31_N0, M20K_X56_Y17_N0, M20K_X65_Y28_N0, M20K_X56_Y35_N0, M20K_X56_Y41_N0, M20K_X65_Y42_N0, M20K_X65_Y37_N0, M20K_X56_Y40_N0, M20K_X65_Y39_N0, M20K_X65_Y35_N0, M20K_X65_Y44_N0, M20K_X65_Y43_N0, M20K_X92_Y31_N0, M20K_X56_Y36_N0, M20K_X56_Y18_N0, M20K_X65_Y27_N0, M20K_X56_Y28_N0, M20K_X92_Y27_N0, M20K_X65_Y23_N0, M20K_X56_Y26_N0, M20K_X92_Y29_N0, M20K_X65_Y29_N0, M20K_X65_Y31_N0, M20K_X92_Y28_N0, M20K_X65_Y26_N0, M20K_X65_Y30_N0, M20K_X65_Y25_N0, M20K_X92_Y30_N0, M20K_X65_Y38_N0, M20K_X56_Y21_N0, M20K_X56_Y38_N0, M20K_X56_Y27_N0, M20K_X92_Y26_N0, M20K_X56_Y22_N0, M20K_X65_Y18_N0 ; Don't care          ; New data        ; New data        ; Off      ; No                     ; High Speed       ; No - Unsupported Depth ;
++-----------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-------------+-------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+-----------------+-----------------+----------+------------------------+------------------+------------------------+
+Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Physical RAM Information                                                                                                                               ;
++-----------------------+-------------------------+-------------------------------+-----------------------------------------------------------------------------+
+; Physical RAM Location ; Physical RAM Usage Bits ; Physical RAM Usage Percentage ; Logical RAM Name                                                            ;
++-----------------------+-------------------------+-------------------------------+-----------------------------------------------------------------------------+
+; M20K_X65_Y18_N0       ; 2304                    ; 11.2                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y17_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y18_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y19_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y20_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y21_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y22_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y23_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y24_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y25_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y26_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y27_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y28_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y29_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y30_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y31_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y32_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y33_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y34_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y35_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y36_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y37_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y38_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y39_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y40_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X56_Y41_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y10_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y12_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y17_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y19_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y20_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y21_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y22_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y23_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y24_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y25_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y26_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y27_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y28_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y29_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y30_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y31_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y32_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y33_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y34_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y35_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y36_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y37_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y38_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y39_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y40_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y41_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y42_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y43_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y44_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y45_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y46_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y25_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y26_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y27_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y28_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y29_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y30_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y31_N0       ; 8192                    ; 40.0                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y26_N0       ; 11520                   ; 56.2                          ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y10_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y11_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y12_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y13_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y14_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y15_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y16_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y17_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y18_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y19_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y20_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y21_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y22_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y23_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y24_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y25_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y26_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y27_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y28_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y29_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y30_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y31_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y32_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y33_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y34_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y35_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y36_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y37_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y38_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y39_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y40_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y41_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y42_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y43_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y44_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y45_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y46_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y47_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y48_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y49_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y50_N0      ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y6_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y7_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y8_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X116_Y9_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y11_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y13_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y14_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y15_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X65_Y16_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y10_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y11_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y12_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y13_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y14_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y15_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y16_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y17_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y18_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y19_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y20_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y21_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y22_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y23_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y24_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y32_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y33_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y34_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y35_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y36_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y37_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y38_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y39_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y40_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y41_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y42_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y5_N0        ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y6_N0        ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y8_N0        ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X92_Y9_N0        ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y10_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y11_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y12_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y13_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y14_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y15_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y16_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y17_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y18_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y19_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y20_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y21_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y22_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y23_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y24_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y25_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y27_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y28_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y29_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y30_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y31_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y32_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y33_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y34_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y35_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y36_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y37_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y38_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y39_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y40_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y41_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y42_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y43_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y44_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y45_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y46_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y47_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y48_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y49_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y50_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y51_N0       ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y5_N0        ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y6_N0        ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y7_N0        ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y8_N0        ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
+; M20K_X97_Y9_N0        ; 20480                   ; 100.0                         ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ;
++-----------------------+-------------------------+-------------------------------+-----------------------------------------------------------------------------+
+Note: This table shows up to 500 physical rams that are least utilized. You can change this number by setting PHYSICAL_RAM_RPT_MAX_ROW in qsf file.
+
+
++----------------+
+; Place Messages ;
++----------------+
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 26.1.1 Build 130 08/06/2026 SC Pro Edition
+    Info: Processing started: Wed Nov 25 17:57:46 2026
+    Info: System process ID: 14036
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off A3_Real_Time_Image_Processing -c golden_top
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = A3_Real_Time_Image_Processing
+Info: Revision = golden_top
+Info (11165): Fitter preparation operations ending: elapsed time is 00:01:16
+Info (18252): The Fitter is using Physical Synthesis.
+Info (18258): Fitter Physical Synthesis operations beginning
+Info (18259): Fitter Physical Synthesis operations ending: elapsed time is 00:00:01
+Info (11178): Promoted 3 clocks 
+    Info (18386): CLOCK0_50 (1785 fanout) drives clock sectors (0, 0) to (1, 0)
+    Info (18386): u_V_PLL|iopll_0|tennm_ph2_iopll~O_OUT_CLK0 (1727 fanout) drives clock sectors (0, 0) to (1, 0)
+    Info (18386): u_TFP410_I2C|K0|CK_1HZ (141 fanout) drives clock sector (1, 0)
+Info (22300): Design uses Placement Effort Multiplier = 0.8.
+Info (170189): Fitter placement preparation operations beginning
+Info (11888): Total time spent on timing analysis during Physical Synthesis is 0.00 seconds.
+Info (22300): Design uses Placement Effort Multiplier = 0.8.
+Info (170191): Fitter placement operations beginning
+Info (170137): Fitter placement was successful
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
+Info (11888): Total time spent on timing analysis during Placement is 0.01 seconds.
+
+

@@ -1,0 +1,1168 @@
+Synthesis report
+Wed Nov 25 17:57:44 2026
+Quartus Prime Version 26.1.1 Build 130 08/06/2026 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Synthesis Summary
+  3. Synthesis Settings
+  4. Synthesis Source Files Read
+  5. Synthesis IP Cores Summary
+  6. Synthesis Partition Summary
+---- Analysis & Elaboration Stage Reports ----
+       7. Source Assignments for User Entity TFP410_I2C Instance: u_TFP410_I2C
+       8. Ignored Source Level Assignments for User Entity frame_buffer Instance: u_frame_buffer
+       9. Source Assignments for User Entity V_PLL_altera_iopll_2110_ctesofa Instance: u_V_PLL|iopll_0
+      10. Parameter Settings for User Entity RESET_DELY Instance: u_RESET_DELY
+      11. Parameter Settings for User Entity TFP410_I2C Instance: u_TFP410_I2C
+      12. Parameter Settings for User Entity uart_rx Instance: u_uart_rx
+      13. Parameter Settings for User Entity uart_frame_rx Instance: u_frame_rx
+      14. Parameter Settings for User Entity video_timing Instance: u_timing
+      15. Parameter Settings for User Entity img_reader Instance: u_reader
+      16. Parameter Settings for User Entity sync_delay Instance: u_sync_delay
+      17. System Level Debug Agent Report
+      18. Assignments with Invalid Source or Target
+      19. Top Causes of Logic Optimized Away During Sweep
+---- Logic Synthesis Stage Reports ----
+      20. Partition "root_partition" Resource Utilization by Entity
+      21. State Machine - Summary
+      22. State Machine - u_frame_rx|st
+      23. State Machine - u_uart_rx|state
+      24. Registers Removed During Synthesis
+      25. Removed Registers Triggering Further Register Optimizations
+      26. General Register Statistics for Partition "root_partition"
+      27. Inverted Register Statistics
+      28. Multiplexer Restructuring Statistics (Restructuring Performed)
+      29. Registers Packed Into Inferred Megafunctions
+      30. Source Assignments for u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1
+      31. Parameter Settings for Inferred Entity Instance: u_frame_buffer|mem_rtl_0
+      32. Post-Synthesis Netlist Statistics for Partition "root_partition"
+      33. Synthesis Resource Usage Summary for Partition "root_partition"
+      34. Synthesis RAM Summary for Partition "root_partition"
+      35. Partition "auto_fab_0" Resource Utilization by Entity
+      36. General Register Statistics for Partition "auto_fab_0"
+      37. Post-Synthesis Netlist Statistics for Partition "auto_fab_0"
+      38. Synthesis Resource Usage Summary for Partition "auto_fab_0"
+ 39. Warnings for v/I2C_READ_DATA.v
+ 40. Warnings for v/I2C_WRITE.v
+ 41. Warnings for v/I2C_WRITE_POINTER.v
+ 42. Warnings for v/TFP410_I2C.v
+ 43. Warnings for v/frame_buffer.v
+ 44. Warnings for v/golden_top.v
+ 45. Warnings for v/img_reader.v
+ 46. Warnings for v/video_timing.v
+ 47. Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2026  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++-----------------------------------------------------------------------------------+
+; Synthesis Summary                                                                 ;
++--------------------------------------+--------------------------------------------+
+; Synthesis Status                     ; Successful - Wed Nov 25 17:57:43 2026      ;
+; Revision Name                        ; golden_top                                 ;
+; Top-level Entity Name                ; golden_top                                 ;
+; Family                               ; Agilex 3                                   ;
+; Quartus Prime Version                ; 26.1.1 Build 130 08/06/2026 SC Pro Edition ;
+; Device                               ; A3CZ135BB18AE7S                            ;
+; Logic utilization estimate (in ALMs) ; 0 / 45,800 ( 0 % )                         ;
+; Total dedicated logic registers      ; 512                                        ;
+; Estimated DSP Blocks Post-Merging    ; 0                                          ;
++--------------------------------------+--------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Synthesis Settings                                                                                                                               ;
++----------------------------------------------------------------------------------------------+-------------------------+-------------------------+
+; Option                                                                                       ; Setting                 ; Default Value           ;
++----------------------------------------------------------------------------------------------+-------------------------+-------------------------+
+; Device                                                                                       ; A3CZ135BB18AE7S         ;                         ;
+; Top-level entity name                                                                        ; golden_top              ; golden_top              ;
+; Family name                                                                                  ; Agilex 3                ; Cyclone 10 GX           ;
+; Enable parallel Assembler and Timing Analyzer during compilation                             ; On                      ; On                      ;
+; Enable compact report table                                                                  ; Off                     ; Off                     ;
+; Enable Design Assistant in the compilation flow                                              ; On                      ; On                      ;
+; Design Assistant include IP blocks                                                           ; Off                     ; Off                     ;
+; High fanout net threshold for RAM inference                                                  ; 15                      ; 15                      ;
+; Design Assistant limit on reported violations per rule                                       ; 5000                    ; 5000                    ;
+; Optimization Mode                                                                            ; Balanced                ; Balanced                ;
+; Allow Register Retiming                                                                      ; On                      ; On                      ;
+; Allow RAM Retiming                                                                           ; On                      ; On                      ;
+; Allow DSP Retiming                                                                           ; On                      ; On                      ;
+; Restructure Multiplexers                                                                     ; Auto                    ; Auto                    ;
+; Waive gated clock synchronizer check                                                         ; On                      ; On                      ;
+; (DEPRECATED) MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                     ; Off                     ;
+; Preserve fewer node names                                                                    ; On                      ; On                      ;
+; Altera FPGA IP Evaluation Mode                                                               ; Enable                  ; Enable                  ;
+; Verilog Version                                                                              ; Verilog_2001            ; Verilog_2001            ;
+; VHDL Version                                                                                 ; VHDL_1993               ; VHDL_1993               ;
+; State Machine Processing                                                                     ; Auto                    ; Auto                    ;
+; Safe State Machine                                                                           ; Auto                    ; Auto                    ;
+; Iteration limit for constant Verilog loops                                                   ; 5000                    ; 5000                    ;
+; Iteration limit for non-constant Verilog loops                                               ; 250                     ; 250                     ;
+; Infer RAMs from Raw Logic                                                                    ; On                      ; On                      ;
+; DSP Action on miss                                                                           ; Ignore                  ; Ignore                  ;
+; DSP Block Balancing                                                                          ; Auto                    ; Auto                    ;
+; NOT Gate Push-Back                                                                           ; On                      ; On                      ;
+; Power-Up Don't Care                                                                          ; On                      ; On                      ;
+; Remove Redundant Logic Cells                                                                 ; Off                     ; Off                     ;
+; Remove Duplicate Registers                                                                   ; On                      ; On                      ;
+; Ignore GLOBAL Buffers                                                                        ; Off                     ; Off                     ;
+; Ignore LCELL Buffers                                                                         ; Off                     ; Off                     ;
+; Ignore SOFT Buffers                                                                          ; On                      ; On                      ;
+; Optimization Technique                                                                       ; Balanced                ; Balanced                ;
+; Perform WYSIWYG Primitive Resynthesis                                                        ; Off                     ; Off                     ;
+; Auto ROM Replacement                                                                         ; On                      ; On                      ;
+; Auto RAM Replacement                                                                         ; On                      ; On                      ;
+; Auto DSP Block Replacement                                                                   ; On                      ; On                      ;
+; Auto Shift Register Replacement                                                              ; Auto                    ; Auto                    ;
+; Allow Shift Register Merging across Hierarchies                                              ; Auto                    ; Auto                    ;
+; Physical Shift Register Inference                                                            ; On                      ; On                      ;
+; Auto Clock Enable Replacement                                                                ; On                      ; On                      ;
+; Strict RAM Replacement                                                                       ; Off                     ; Off                     ;
+; Allow Synchronous Control Signals                                                            ; On                      ; On                      ;
+; Force Use of Synchronous Clear Signals                                                       ; Off                     ; Off                     ;
+; Auto Resource Sharing                                                                        ; Off                     ; Off                     ;
+; Allow Any RAM Size For Recognition                                                           ; Off                     ; Off                     ;
+; Allow Any Shift Register Size For Recognition                                                ; Off                     ; Off                     ;
+; Ignore translate_off and synthesis_off directives                                            ; Off                     ; Off                     ;
+; Report Propagation of Constraints                                                            ; On                      ; On                      ;
+; Ignore Maximum Fan-Out Assignments                                                           ; Off                     ; Off                     ;
+; Maximum Synchronizer Length Protected during Optimization                                    ; 3                       ; 3                       ;
+; Power Optimization During Synthesis                                                          ; Normal compilation      ; Normal compilation      ;
+; HDL message level                                                                            ; Level2                  ; Level2                  ;
+; Number of Protected Registers Reported in Synthesis Report                                   ; 100                     ; 100                     ;
+; Number of Removed Registers Reported in Synthesis Report                                     ; 5000                    ; 5000                    ;
+; Number of Optimized Away Hierarchies Reported in Synthesis Report                            ; 100                     ; 100                     ;
+; Number of Top Root Causes Reported in Synthesis Report                                       ; 10                      ; 10                      ;
+; Group Identical Hierarchies in Optimized Away Hierarchies Report                             ; On                      ; On                      ;
+; Number of Swept Nodes Reported in Synthesis Report                                           ; 5000                    ; 5000                    ;
+; Number of Inverted Registers Reported in Synthesis Report                                    ; 100                     ; 100                     ;
+; Clock MUX Protection                                                                         ; On                      ; On                      ;
+; Auto Gated Clock Conversion                                                                  ; Off                     ; Off                     ;
+; Block Design Naming                                                                          ; Auto                    ; Auto                    ;
+; SDC constraint protection                                                                    ; Off                     ; Off                     ;
+; Optimization and Constraint Precedence                                                       ; Prioritize Optimization ; Prioritize Optimization ;
+; Synthesis Effort                                                                             ; Auto                    ; Auto                    ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                                 ; On                      ; On                      ;
+; Analysis & Synthesis Message Level                                                           ; Medium                  ; Medium                  ;
+; Disable Register Merging Across Hierarchies                                                  ; Auto                    ; Auto                    ;
+; Resource Aware Inference For Block RAM                                                       ; On                      ; On                      ;
+; Automatic Parallel Synthesis                                                                 ; On                      ; On                      ;
+; Partial Reconfiguration Bitstream ID                                                         ; Off                     ; Off                     ;
+; Disable DSP Negate Inferencing                                                               ; Off                     ; Off                     ;
+; Report Parameter Settings                                                                    ; On                      ; On                      ;
+; Report Parameter Settings to ASCII                                                           ; On                      ; On                      ;
+; Report Source Assignments                                                                    ; On                      ; On                      ;
+; Report Source Assignments to ASCII                                                           ; On                      ; On                      ;
+; Report Resource Utilization by Entity to ASCII                                               ; On                      ; On                      ;
+; Size of the Latch Report                                                                     ; 100                     ; 100                     ;
+; Enable VHDL static assertion support                                                         ; Off                     ; Off                     ;
+; Enable SystemVerilog static assertion support                                                ; Off                     ; Off                     ;
+; Enable State Machines Inference                                                              ; On                      ; On                      ;
+; Allow RAMs Inferred In Generate-For Loop For Verilog                                         ; Off                     ; Off                     ;
+; Enable formal verification support during compilation                                        ; Off                     ; Off                     ;
+; Size of the PR Initial Conditions Report                                                     ; 100                     ; 100                     ;
+; Number of Registers with Ignored Power-Up Settings Reported in Synthesis Report              ; 500                     ; 500                     ;
+; Report PR Initial Values as Errors                                                           ; Off                     ; Off                     ;
+; Fractal Synthesis                                                                            ; Off                     ; Off                     ;
+; Aggressive Multiplexer Area Optimization                                                     ; Auto                    ; Auto                    ;
+; 6LUT to Extended Mode Conversion                                                             ; Auto                    ; Auto                    ;
+; Synthesis Available Resource Multiplier                                                      ; 1                       ; 1                       ;
+; Message Level for Unconnected Output Ports                                                   ; Warning                 ; Warning                 ;
+; Pack Barrelshifters into Carry Chains for Better Area                                        ; Auto                    ; Auto                    ;
+; Initialize Verilog enums to X                                                                ; Off                     ; Off                     ;
+; Enable dynamic report                                                                        ; Off                     ; Off                     ;
+; Show Collapsible Rows in Ascii Report for Warning Summary Reports                            ; On                      ; On                      ;
+; Enable RTL Analysis Debug Mode                                                               ; Off                     ; Off                     ;
+; Enable DSP mapping                                                                           ; Off                     ; Off                     ;
+; Enable preserve for debug assignments                                                        ; Off                     ; Off                     ;
++----------------------------------------------------------------------------------------------+-------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Synthesis Source Files Read                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+-----------------------------------------------------------------------+---------------+----------------------------------+
+; File Name with User-Entered Path                                                                                                                                  ; File Type                                                                   ; File Name with Absolute Path                                                                                                                                                                                              ; Library                                 ; IP Source                                                             ; Include Files ; MD5                              ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+-----------------------------------------------------------------------+---------------+----------------------------------+
+; v/video_timing.v                                                                                                                                                  ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/video_timing.v                                                                                                                                                  ;                                         ;                                                                       ;               ; 540f32fe3103664f6eed8ea637f0776c ;
+; v/pixel_proc.v                                                                                                                                                    ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/pixel_proc.v                                                                                                                                                    ;                                         ;                                                                       ;               ; 9329903891fd961e674776d45af8ec52 ;
+; v/img_reader.v                                                                                                                                                    ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/img_reader.v                                                                                                                                                    ;                                         ;                                                                       ;               ; 0bd11711cc602ca35cbd09b327947a01 ;
+; mif/image.mif                                                                                                                                                     ; User-Specified Memory Initialization File                                   ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/mif/image.mif                                                                                                                                                     ;                                         ;                                                                       ;               ; aa1791cdd10d3f065ad9e964f428c71d ;
+; v/sync_delay.v                                                                                                                                                    ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/sync_delay.v                                                                                                                                                    ;                                         ;                                                                       ;               ; 971661402e2ba613857974a138171372 ;
+; v/uart_rx.v                                                                                                                                                       ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/uart_rx.v                                                                                                                                                       ;                                         ;                                                                       ;               ; 15ac141219998589ec4432ccce240496 ;
+; v/uart_frame_rx.v                                                                                                                                                 ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/uart_frame_rx.v                                                                                                                                                 ;                                         ;                                                                       ;               ; 349bf7cd630bed041053326f20e2c516 ;
+; v/TFP410_I2C.v                                                                                                                                                    ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/TFP410_I2C.v                                                                                                                                                    ;                                         ;                                                                       ;               ; f656d4703e25e6fe4e1928542c69c3cb ;
+; v/RESET_DELY.v                                                                                                                                                    ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/RESET_DELY.v                                                                                                                                                    ;                                         ;                                                                       ;               ; b5c3fead2366e76da504c3cc14981dfe ;
+; v/image_path_top.v                                                                                                                                                ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/image_path_top.v                                                                                                                                                ;                                         ;                                                                       ;               ; 2f58b9454b05bcb03162c1b398502119 ;
+; v/I2C_WRITE_POINTER.v                                                                                                                                             ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE_POINTER.v                                                                                                                                             ;                                         ;                                                                       ;               ; 8fe5192e51da8389a0afdb2e1a158202 ;
+; v/I2C_WRITE.v                                                                                                                                                     ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE.v                                                                                                                                                     ;                                         ;                                                                       ;               ; d13f5afd92179def6f309372bcd0cb1c ;
+; v/I2C_READ_DATA.v                                                                                                                                                 ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_READ_DATA.v                                                                                                                                                 ;                                         ;                                                                       ;               ; 1f6a998e6f7edc2cac8024c3b073b129 ;
+; v/golden_top.v                                                                                                                                                    ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/golden_top.v                                                                                                                                                    ;                                         ;                                                                       ;               ; acb0db1a4cd007a21ec39fd32878069f ;
+; v/frame_buffer.v                                                                                                                                                  ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/frame_buffer.v                                                                                                                                                  ;                                         ;                                                                       ;               ; 36153a6d4b6a919aaee4e98b820b0aa2 ;
+; v/CLOCKMEM.v                                                                                                                                                      ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/CLOCKMEM.v                                                                                                                                                      ;                                         ;                                                                       ;               ; d44f8ac02822fa71b21de79571802b17 ;
+; ip/V_PLL.ip                                                                                                                                                       ; User-Specified IP File                                                      ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/ip/V_PLL.ip                                                                                                                                                       ;                                         ;                                                                       ;               ; 6fa2a90f938333bf0bceef20dfa9d840 ;
+; ip/V_PLL/altera_iopll_2110/synth/V_PLL_altera_iopll_2110_ctesofa.v                                                                                                ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/ip/V_PLL/altera_iopll_2110/synth/V_PLL_altera_iopll_2110_ctesofa.v                                                                                                ; altera_iopll_2110                       ; ip/V_PLL.ip                                                           ;               ; e5eed4cacafd4cebb0cb27c322db91c0 ;
+; ip/V_PLL/synth/V_PLL.v                                                                                                                                            ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/ip/V_PLL/synth/V_PLL.v                                                                                                                                            ; V_PLL                                   ; ip/V_PLL.ip                                                           ;               ; a17bfda8f0e8b38db5a3522e2d238e46 ;
+; ip/reset_release.ip                                                                                                                                               ; User-Specified IP File                                                      ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/ip/reset_release.ip                                                                                                                                               ;                                         ;                                                                       ;               ; ecccf77551177124de41b0f8dd78759e ;
+; ip/reset_release/altera_s10_user_rst_clkgate_1949/synth/altera_s10_user_rst_clkgate.sv                                                                            ; User-Specified SystemVerilog HDL File                                       ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/ip/reset_release/altera_s10_user_rst_clkgate_1949/synth/altera_s10_user_rst_clkgate.sv                                                                            ; altera_s10_user_rst_clkgate_1949        ; ip/reset_release.ip                                                   ;               ; 936cf88112ba8f92272fdd52253404d9 ;
+; ip/reset_release/synth/reset_release.v                                                                                                                            ; User-Specified Verilog HDL File                                             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/ip/reset_release/synth/reset_release.v                                                                                                                            ; reset_release                           ; ip/reset_release.ip                                                   ;               ; 9c07a9d117773fc0e426dbf15348525c ;
+; golden_top.sdc                                                                                                                                                    ; User-Specified SDC File (Read by the Timing Analyzer at each fitter stage)  ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/golden_top.sdc                                                                                                                                                    ;                                         ;                                                                       ;               ; 305045936adf4ad0d600a5ae36579bf2 ;
+; dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.qip                                                                                             ; User-Specified IP File                                                      ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.qip                                                                                             ;                                         ;                                                                       ;               ; 621a7d723483ea6711fe4b60a3de8d4c ;
+; qdb/.t/6b068c8d5a2d.tmp/.temp/cpt_proxy/alt_sld_fab_0_altera_sld_splitter_1920_tbvre7y.sv                                                                         ; Encrypted Auto-Generated Megafunction                                       ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/qdb/.t/6b068c8d5a2d.tmp/.temp/cpt_proxy/alt_sld_fab_0_altera_sld_splitter_1920_tbvre7y.sv                                                                         ; altera_sld_splitter_1920                ; dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.qip ;               ;                                  ;
+; dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/intel_agilex_reset_release_from_sdm_203/synth/alt_sld_fab_0_intel_agilex_reset_release_from_sdm_203_poqcpxq.v ; Auto-Generated Megafunction                                                 ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/intel_agilex_reset_release_from_sdm_203/synth/alt_sld_fab_0_intel_agilex_reset_release_from_sdm_203_poqcpxq.v ; intel_agilex_reset_release_from_sdm_203 ; dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.qip ;               ;                                  ;
+; dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/intel_agilex_reset_release_from_sdm_203/synth/intel_agilex_reset_release_from_sdm_atom.v                      ; Auto-Generated Megafunction                                                 ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/intel_agilex_reset_release_from_sdm_203/synth/intel_agilex_reset_release_from_sdm_atom.v                      ; intel_agilex_reset_release_from_sdm_203 ; dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.qip ;               ;                                  ;
+; qdb/.t/6b068c8d5a2d.tmp/.temp/cpt_proxy/alt_sld_fab_0_alt_sld_fab_1920_hwoxyki.v                                                                                  ; Encrypted Auto-Generated Megafunction                                       ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/qdb/.t/6b068c8d5a2d.tmp/.temp/cpt_proxy/alt_sld_fab_0_alt_sld_fab_1920_hwoxyki.v                                                                                  ; alt_sld_fab_1920                        ; dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.qip ;               ;                                  ;
+; qdb/.t/6b068c8d5a2d.tmp/.temp/cpt_proxy/alt_sld_fab_0_alt_sld_fab_0_10_fkimwiy.v                                                                                  ; Encrypted Auto-Generated Megafunction                                       ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/qdb/.t/6b068c8d5a2d.tmp/.temp/cpt_proxy/alt_sld_fab_0_alt_sld_fab_0_10_fkimwiy.v                                                                                  ; alt_sld_fab_0_10                        ; dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.qip ;               ;                                  ;
+; dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/synth/alt_sld_fab_0.v                                                                                         ; Auto-Generated Megafunction                                                 ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/synth/alt_sld_fab_0.v                                                                                         ; alt_sld_fab_0                           ; dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.qip ;               ;                                  ;
+; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/altera_agilex_config_reset_release_endpoint.vhd                                                              ; Megafunction                                                                ; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/altera_agilex_config_reset_release_endpoint.vhd                                                                                                                      ; altera_work                             ;                                                                       ;               ; e168ffab7d3d3bd8f9da433add923fcc ;
+; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/altera_fabric_endpoint.vhd                                                                                   ; Encrypted Megafunction                                                      ; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/altera_fabric_endpoint.vhd                                                                                                                                           ; altera_work                             ;                                                                       ;               ; 51e55ef30e3d781bb0fa30a5ddc80c62 ;
+; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/sld_hub.vhd                                                                                                  ; Encrypted Auto-Generated Megafunction                                       ; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/sld_hub.vhd                                                                                                                                                          ; altera_sld                              ;                                                                       ;               ; 2728de43ae4a63466a45bc0095adcd6c ;
+; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                                                             ; Encrypted Megafunction                                                      ; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                                                                                                                     ; altera_work                             ;                                                                       ;               ; cbc0beb3af0afc4e2cca0e62c039faa9 ;
+; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                                                                                               ; Encrypted Megafunction                                                      ; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                                                                                                                                                       ; altera_work                             ;                                                                       ;               ; 84358ed1c3fc2611b0c7acfbd0a179bc ;
+; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/altera_syncram.tdf                                                                                           ; Megafunction                                                                ; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/altera_syncram.tdf                                                                                                                                                   ; work                                    ;                                                                       ;               ;                                  ;
+; cbx.lst                                                                                                                                                           ; Auto-Found Unspecified File                                                 ; c:/altera_pro/26.1.1/quartus/libraries/megafunctions/cbx.lst                                                                                                                                                              ;                                         ;                                                                       ;               ;                                  ;
+; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/tmp-clearbox/golden_top/1692/altera_syncram_impl_qerf.tdf                                                 ; Auto-Generated Megafunction                                                 ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/tmp-clearbox/golden_top/1692/altera_syncram_impl_qerf.tdf                                                                                                         ;                                         ;                                                                       ;               ;                                  ;
+; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/tmp-clearbox/golden_top/1692/altera_syncram_k8qg1.tdf                                                     ; Auto-Generated Megafunction                                                 ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/tmp-clearbox/golden_top/1692/altera_syncram_k8qg1.tdf                                                                                                             ;                                         ;                                                                       ;               ;                                  ;
+; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/tmp-clearbox/golden_top/1692/decode_5os4.tdf                                                              ; Auto-Generated Megafunction                                                 ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/tmp-clearbox/golden_top/1692/decode_5os4.tdf                                                                                                                      ;                                         ;                                                                       ;               ;                                  ;
+; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/tmp-clearbox/golden_top/1692/mux_ansq.tdf                                                                 ; Auto-Generated Megafunction                                                 ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/tmp-clearbox/golden_top/1692/mux_ansq.tdf                                                                                                                         ;                                         ;                                                                       ;               ;                                  ;
+; ip/V_PLL/altera_iopll_2110/synth/V_PLL_altera_iopll_2110_ctesofa.sdc                                                                                              ; User-Specified Synopsys Design Constraints File                             ; ip/V_PLL/altera_iopll_2110/synth/V_PLL_altera_iopll_2110_ctesofa.sdc                                                                                                                                                      ;                                         ; ip/V_PLL.ip                                                           ;               ; 35252443831b89a9e89569f1ce180c81 ;
+; ip/reset_release/altera_s10_user_rst_clkgate_1949/synth/altera_s10_user_rst_clkgate_fm.sdc                                                                        ; User-Specified Synopsys Design Constraints File                             ; ip/reset_release/altera_s10_user_rst_clkgate_1949/synth/altera_s10_user_rst_clkgate_fm.sdc                                                                                                                                ;                                         ; ip/reset_release.ip                                                   ;               ; cec25a0d0a18a35005ed8a57ab21cefb ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+-----------------------------------------------------------------------+---------------+----------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Synthesis IP Cores Summary                                                                                                                                                                                                                                                            ;
++-------------------+-------------------------------------+--------------+------------+-------------------------------------+---------+--------------+--------------+----------------------------------------------------------+--------------------------------------------------------+
+; Vendor            ; IP Name                             ; Product Name ; Product ID ; IP Core Name                        ; Version ; Release Date ; License Type ; Entity Instance                                          ; IP Include File                                        ;
++-------------------+-------------------------------------+--------------+------------+-------------------------------------+---------+--------------+--------------+----------------------------------------------------------+--------------------------------------------------------+
+; Intel Corporation ; alt_sld_fab                         ; N/A          ; N/A        ; alt_sld_fab                         ; 19.2.0  ; N/A          ; N/A          ; auto_fab_0                                               ; dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0.ip ;
+; Intel Corporation ; Signal Tap                          ; Signal Tap   ; 6AF7_BCEC  ; Signal Tap                          ; N/A     ; N/A          ; Licensed     ; auto_fab_0|alt_sld_fab_0                                 ;                                                        ;
+; Intel Corporation ; Signal Tap                          ; Signal Tap   ; 6AF7_BCEC  ; Signal Tap                          ; N/A     ; N/A          ; Licensed     ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0                   ;                                                        ;
+; Intel Corporation ; intel_agilex_reset_release_from_sdm ; N/A          ; N/A        ; intel_agilex_reset_release_from_sdm ; 20.3    ; N/A          ; N/A          ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|agilexconfigreset ; dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0.ip ;
+; Intel Corporation ; Signal Tap                          ; Signal Tap   ; 6AF7_BCEC  ; Signal Tap                          ; N/A     ; N/A          ; Licensed     ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|splitter          ;                                                        ;
+; Intel Corporation ; IOPLL IP                            ; N/A          ; N/A        ; altera_iopll                        ; 21.1.0  ; N/A          ; N/A          ; u_V_PLL                                                  ; ip/V_PLL.ip                                            ;
+; Intel Corporation ; Reset Release IP                    ; N/A          ; N/A        ; altera_s10_user_rst_clkgate         ; 19.4.9  ; N/A          ; N/A          ; u_reset_release                                          ; ip/reset_release.ip                                    ;
++-------------------+-------------------------------------+--------------+------------+-------------------------------------+---------+--------------+--------------+----------------------------------------------------------+--------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Synthesis Partition Summary                                                                ;
++----------------+----------------+---------+--------------+-------+-------------------------+
+; Partition Name ; Hierarchy Path ; Type    ; Preservation ; Empty ; Partition Database File ;
++----------------+----------------+---------+--------------+-------+-------------------------+
+; root_partition ; |              ; Default ;              ;       ;                         ;
+;  auto_fab_0    ; auto_fab_0     ; Default ;              ;       ;                         ;
++----------------+----------------+---------+--------------+-------+-------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source Assignments for User Entity TFP410_I2C Instance: u_TFP410_I2C                 ;
++-----------------------------------+-------+------+----------------+------------------+
+; Assignment                        ; Value ; From ; To             ; Source Location  ;
++-----------------------------------+-------+------+----------------+------------------+
+; IGNORE_LCELL_BUFFERS              ; OFF   ; -    ; const_zero_sig ; TFP410_I2C.v:215 ;
+; REMOVE_REDUNDANT_LOGIC_CELLS      ; OFF   ; -    ; const_zero_sig ; TFP410_I2C.v:215 ;
+; IMPLEMENT_AS_OUTPUT_OF_LOGIC_CELL ; ON    ; -    ; const_zero_sig ; TFP410_I2C.v:214 ;
++-----------------------------------+-------+------+----------------+------------------+
+All Instances:
+u_TFP410_I2C
+
+
+
++----------------------------------------------------------------------------------------+
+; Ignored Source Level Assignments for User Entity frame_buffer Instance: u_frame_buffer ;
++------------+--------+-----+-------------------------+----------------------------------+
+; Assignment ; Value  ; To  ; Reason                  ; Source Location                  ;
++------------+--------+-----+-------------------------+----------------------------------+
+; ram_style  ; "M20K" ; mem ; Invalid assignment name ; v/frame_buffer.v:23              ;
++------------+--------+-----+-------------------------+----------------------------------+
+All Instances:
+u_frame_buffer
+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Source Assignments for User Entity V_PLL_altera_iopll_2110_ctesofa Instance: u_V_PLL|iopll_0                   ;
++-----------------------------------+-----------+------+-----------------+---------------------------------------+
+; Assignment                        ; Value     ; From ; To              ; Source Location                       ;
++-----------------------------------+-----------+------+-----------------+---------------------------------------+
+; IGNORE_LCELL_BUFFERS              ; OFF       ; -    ; gnd             ; V_PLL_altera_iopll_2110_ctesofa.v:74  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS      ; OFF       ; -    ; gnd             ; V_PLL_altera_iopll_2110_ctesofa.v:74  ;
+; DESIGN_ASSISTANT_EXCLUDE          ; RES-50002 ; -    ; tennm_ph2_iopll ; V_PLL_altera_iopll_2110_ctesofa.v:178 ;
+; IMPLEMENT_AS_OUTPUT_OF_LOGIC_CELL ; ON        ; -    ; gnd             ; V_PLL_altera_iopll_2110_ctesofa.v:74  ;
++-----------------------------------+-----------+------+-----------------+---------------------------------------+
+All Instances:
+u_V_PLL|iopll_0
+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity RESET_DELY Instance: u_RESET_DELY ;
++----------------+-----------+-----------------------------------------+
+; Parameter Name ; Value     ; Type                                    ;
++----------------+-----------+-----------------------------------------+
+; SEC            ; 50000000  ; Signed Integer                          ;
+; SEC0d5         ; 25000000  ; Signed Integer                          ;
+; SEC1           ; 50000000  ; Signed Integer                          ;
+; SEC10          ; 500000000 ; Signed Integer                          ;
+; SEC2           ; 100000000 ; Signed Integer                          ;
++----------------+-----------+-----------------------------------------+
+All Instances:
+u_RESET_DELY
+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity TFP410_I2C Instance: u_TFP410_I2C ;
++----------------+----------+------------------------------------------+
+; Parameter Name ; Value    ; Type                                     ;
++----------------+----------+------------------------------------------+
+; P_CTL_1_MODE   ; 00001000 ; Unsigned Binary                          ;
+; P_DEV_ID       ; 00000010 ; Unsigned Binary                          ;
+; P_VEN_ID       ; 00000000 ; Unsigned Binary                          ;
+; READ_MAX       ; 2        ; Signed Integer                           ;
+; WRITE_MAX      ; 1        ; Signed Integer                           ;
++----------------+----------+------------------------------------------+
+All Instances:
+u_TFP410_I2C
+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity uart_rx Instance: u_uart_rx ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; CLKS_PER_BIT   ; 434   ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+All Instances:
+u_uart_rx
+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity uart_frame_rx Instance: u_frame_rx ;
++----------------+--------+---------------------------------------------+
+; Parameter Name ; Value  ; Type                                        ;
++----------------+--------+---------------------------------------------+
+; PIXELS         ; 129600 ; Signed Integer                              ;
++----------------+--------+---------------------------------------------+
+All Instances:
+u_frame_rx
+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity video_timing Instance: u_timing ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; HS_ACTIVE      ; 0     ; Signed Integer                            ;
+; H_ACT          ; 1920  ; Signed Integer                            ;
+; H_BP           ; 148   ; Signed Integer                            ;
+; H_FP           ; 88    ; Signed Integer                            ;
+; H_SYNC         ; 44    ; Signed Integer                            ;
+; VS_ACTIVE      ; 0     ; Signed Integer                            ;
+; V_ACT          ; 1080  ; Signed Integer                            ;
+; V_BP           ; 36    ; Signed Integer                            ;
+; V_FP           ; 4     ; Signed Integer                            ;
+; V_SYNC         ; 5     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+All Instances:
+u_timing
+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity img_reader Instance: u_reader ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; IMG_W          ; 480   ; Signed Integer                          ;
+; SHIFT          ; 2     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+All Instances:
+u_reader
+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity sync_delay Instance: u_sync_delay ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; N              ; 3     ; Signed Integer                              ;
+; W              ; 3     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+All Instances:
+u_sync_delay
+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; System Level Debug Agent Report                                                                                            ;
++-------------------------------------------------------------------------+----------------+-----------+---------------------+
+; Agent Hierarchy Path                                                    ; Instance Index ; Host Name ; Host Hierarchy Path ;
++-------------------------------------------------------------------------+----------------+-----------+---------------------+
+; u_reset_release|s10_user_rst_clkgate_0|config_reset_release_endpoint|ep ;                ;           ;                     ;
++-------------------------------------------------------------------------+----------------+-----------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignments with Invalid Source or Target                                                                                                                                                ;
++-----------------+-------------------------+------------+--------+--------------+-------------+--------------+----------------------------------------------------------------------------+
+; Assignment Name ; Sample Assignment Value ; Entity     ; Source ; Source Valid ; Target      ; Target Valid ; Location                                                                   ;
++-----------------+-------------------------+------------+--------+--------------+-------------+--------------+----------------------------------------------------------------------------+
+; IO_STANDARD     ; 3.3-V LVCMOS            ; golden_top ;        ;              ; DDC_I2C_SCL ; No           ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/golden_top.qsf:141 ;
+; IO_STANDARD     ; 3.3-V LVCMOS            ; golden_top ;        ;              ; DDC_I2C_SDA ; No           ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/golden_top.qsf:142 ;
++-----------------+-------------------------+------------+--------+--------------+-------------+--------------+----------------------------------------------------------------------------+
+Sources or targets that are created in Fitter might appear here, safely ignore those. Refer to Fitter's Ignored Assignments Report for a more accurate list.
+
+
+Top root causes of logic optimization that have been identified during sweep. For more details and filtering options, ensure that you have compiled with the "Enable RTL Analysis Debug Mode " setting turned on under Assignments->Settings->Compiler Settings, then go to the " Root Causes Tab " in the " Sweep Hints Viewer " tool in the " RTL Analyzer ".
++--------------------------------------------------------------------------------+
+; Top Causes of Logic Optimized Away During Sweep                                ;
++-------------------------+------------------+-------------+---------------------+
+; Root Object Path        ; Root Object Type ; Root Reason ; Swept Objects Count ;
++-------------------------+------------------+-------------+---------------------+
+; u_TFP410_I2C|DEV_ID[15] ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[14] ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[13] ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[12] ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[11] ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[10] ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[9]  ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[8]  ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[7]  ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[6]  ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
++-------------------------+------------------+-------------+---------------------+
+Table limited at 10 items. To change the number of top root causes reported, set the "Number of Top Root Causes Reported in Synthesis Report " option under Assignments->Settings->Compiler Settings->Advanced Settings (Synthesis)
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition "root_partition" Resource Utilization by Entity                                                                                                                                                                                                             ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+-----------+----------------------------------------------------------------------+---------------------------------+-------------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Max Depth ; Full Hierarchy Name                                                  ; Entity Name                     ; Library Name      ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+-----------+----------------------------------------------------------------------+---------------------------------+-------------------+
+; |                                  ; 1275 (56)           ; 512 (32)                  ; 3110400           ; 0          ; 42   ; 4.1 (4.1) ; |                                                                    ; golden_top                      ; altera_work       ;
+;    |u_RESET_DELY|                  ; 45 (45)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 4.0 (4.0) ; u_RESET_DELY                                                         ; RESET_DELY                      ; altera_work       ;
+;    |u_TFP410_I2C|                  ; 337 (119)           ; 174 (58)                  ; 0                 ; 0          ; 0    ; 4.1 (4.1) ; u_TFP410_I2C                                                         ; TFP410_I2C                      ; altera_work       ;
+;       |I2C_READ_DATA_i|            ; 61 (61)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 4.0 (4.0) ; u_TFP410_I2C|I2C_READ_DATA_i                                         ; I2C_READ_DATA                   ; altera_work       ;
+;       |I2C_WRITE_POINTER_i|        ; 72 (72)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 3.0 (3.0) ; u_TFP410_I2C|I2C_WRITE_POINTER_i                                     ; I2C_WRITE_POINTER               ; altera_work       ;
+;       |I2C_WRITE_i|                ; 45 (45)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 3.0 (3.0) ; u_TFP410_I2C|I2C_WRITE_i                                             ; I2C_WRITE                       ; altera_work       ;
+;       |K0|                         ; 40 (40)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 4.1 (4.1) ; u_TFP410_I2C|K0                                                      ; CLOCKMEM                        ; altera_work       ;
+;    |u_V_PLL|                       ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 1.0 (0.0) ; u_V_PLL                                                              ; V_PLL                           ; V_PLL             ;
+;       |iopll_0|                    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 1.0 (1.0) ; u_V_PLL|iopll_0                                                      ; V_PLL_altera_iopll_2110_ctesofa ; altera_iopll_2110 ;
+;    |u_frame_buffer|                ; 579 (0)             ; 30 (24)                   ; 3110400           ; 0          ; 0    ; 4.0 (1.0) ; u_frame_buffer                                                       ; frame_buffer                    ; altera_work       ;
+;       |mem_rtl_0|                  ; 579 (0)             ; 6 (0)                     ; 3110400           ; 0          ; 0    ; 4.0 (0.0) ; u_frame_buffer|mem_rtl_0                                             ; altera_syncram                  ; work              ;
+;          |auto_generated|          ; 579 (0)             ; 6 (0)                     ; 3110400           ; 0          ; 0    ; 4.0 (0.0) ; u_frame_buffer|mem_rtl_0|auto_generated                              ; altera_syncram_k8qg1            ; altera_work       ;
+;             |altera_syncram_impl1| ; 579 (0)             ; 6 (6)                     ; 3110400           ; 0          ; 0    ; 4.0 (4.0) ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1         ; altera_syncram_impl_qerf        ; altera_work       ;
+;                |decode3|           ; 75 (75)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 2.0 (2.0) ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|decode3 ; decode_5os4                     ; altera_work       ;
+;                |mux4|              ; 504 (504)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 4.0 (4.0) ; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|mux4    ; mux_ansq                        ; altera_work       ;
+;    |u_frame_rx|                    ; 38 (38)             ; 80 (80)                   ; 0                 ; 0          ; 0    ; 3.0 (3.0) ; u_frame_rx                                                           ; uart_frame_rx                   ; altera_work       ;
+;    |u_heartbeat|                   ; 44 (44)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 4.1 (4.1) ; u_heartbeat                                                          ; CLOCKMEM                        ; altera_work       ;
+;    |u_proc|                        ; 24 (24)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 1.0 (1.0) ; u_proc                                                               ; pixel_proc                      ; altera_work       ;
+;    |u_reader|                      ; 32 (32)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 3.1 (3.1) ; u_reader                                                             ; img_reader                      ; altera_work       ;
+;    |u_sync_delay|                  ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0.0 (0.0) ; u_sync_delay                                                         ; sync_delay                      ; altera_work       ;
+;    |u_timing|                      ; 55 (55)             ; 44 (44)                   ; 0                 ; 0          ; 0    ; 3.1 (3.1) ; u_timing                                                             ; video_timing                    ; altera_work       ;
+;    |u_uart_rx|                     ; 63 (63)             ; 42 (42)                   ; 0                 ; 0          ; 0    ; 3.5 (3.5) ; u_uart_rx                                                            ; uart_rx                         ; altera_work       ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+-----------+----------------------------------------------------------------------+---------------------------------+-------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------+
+; State Machine - Summary                                                     ;
++-----------------+------------------+------------+----------------+----------+
+; Name            ; Number of States ; Using aclr ; Encoding Style ; Safeness ;
++-----------------+------------------+------------+----------------+----------+
+; u_frame_rx|st   ; 5                ; Yes        ; One-Hot        ; Safe     ;
+; u_uart_rx|state ; 4                ; Yes        ; One-Hot        ; Safe     ;
++-----------------+------------------+------------+----------------+----------+
+
+
+Encoding Type: Safe One-Hot
++---------------------------------------------------------+
+; State Machine - u_frame_rx|st                           ;
++---------+---------+---------+--------+--------+---------+
+; Name    ; st.RX_G ; st.RX_R ; st.H_B ; st.H_A ; st.RX_B ;
++---------+---------+---------+--------+--------+---------+
+; st.H_A  ; 0       ; 0       ; 0      ; 0      ; 0       ;
+; st.H_B  ; 0       ; 0       ; 1      ; 1      ; 0       ;
+; st.RX_R ; 0       ; 1       ; 0      ; 1      ; 0       ;
+; st.RX_G ; 1       ; 0       ; 0      ; 1      ; 0       ;
+; st.RX_B ; 0       ; 0       ; 0      ; 1      ; 1       ;
++---------+---------+---------+--------+--------+---------+
+
+
+Encoding Type: Safe One-Hot
++----------------------------------------------------------------------------+
+; State Machine - u_uart_rx|state                                            ;
++---------------+--------------+--------------+---------------+--------------+
+; Name          ; state.S_STOP ; state.S_DATA ; state.S_START ; state.S_IDLE ;
++---------------+--------------+--------------+---------------+--------------+
+; state.S_IDLE  ; 0            ; 0            ; 0             ; 0            ;
+; state.S_START ; 0            ; 0            ; 1             ; 1            ;
+; state.S_DATA  ; 0            ; 1            ; 0             ; 1            ;
+; state.S_STOP  ; 1            ; 0            ; 0             ; 1            ;
++---------------+--------------+--------------+---------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                          ;
++------------------------------------------+------------------------------------------------------+-----------+
+; Node name                                ; Reason for Removal                                   ; Node Type ;
++------------------------------------------+------------------------------------------------------+-----------+
+; u_TFP410_I2C|I2C_READ_DATA_i|DATA[0..15] ; Lost fanout                                          ; Register  ;
+; u_TFP410_I2C|W_WORD_DATA[0..5,7]         ; Stuck at VCC due to stuck port data_in               ; Register  ;
+; u_TFP410_I2C|W_WORD_DATA[6]              ; Stuck at GND due to stuck port data_in               ; Register  ;
+; u_reader|row_base[0..4]                  ; Stuck at GND due to stuck port data_in               ; Register  ;
+; u_TFP410_I2C|ST[7]                       ; Merged with u_TFP410_I2C|ST[6]                       ; Register  ;
+; u_TFP410_I2C|W_POINTER_REG[3]            ; Merged with u_TFP410_I2C|BYTE[0]                     ; Register  ;
+; u_TFP410_I2C|BYTE[3..7]                  ; Merged with u_TFP410_I2C|BYTE[2]                     ; Register  ;
+; u_TFP410_I2C|SLAVE_ADDR[0..2,7]          ; Merged with u_TFP410_I2C|BYTE[2]                     ; Register  ;
+; u_TFP410_I2C|W_POINTER_REG[0,2,4..7]     ; Merged with u_TFP410_I2C|BYTE[2]                     ; Register  ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|BYTE[2] ; Merged with u_TFP410_I2C|I2C_WRITE_POINTER_i|BYTE[1] ; Register  ;
+; u_TFP410_I2C|I2C_WRITE_i|BYTE[3..7]      ; Merged with u_TFP410_I2C|I2C_WRITE_i|BYTE[2]         ; Register  ;
+; u_TFP410_I2C|SLAVE_ADDR[4..6]            ; Merged with u_TFP410_I2C|SLAVE_ADDR[3]               ; Register  ;
+; u_TFP410_I2C|SLAVE_ADDR[3]               ; Stuck at VCC due to stuck port data_in               ; Register  ;
+; u_TFP410_I2C|I2C_WRITE_i|BYTE[2]         ; Stuck at GND due to stuck port data_in               ; Register  ;
+; u_TFP410_I2C|I2C_READ_DATA_i|ST[5]       ; Stuck at GND due to stuck port data_in               ; Register  ;
+; u_TFP410_I2C|I2C_WRITE_i|ST[5]           ; Stuck at GND due to stuck port data_in               ; Register  ;
+; u_TFP410_I2C|BYTE[2]                     ; Stuck at GND due to stuck port data_in               ; Register  ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|BYTE[1] ; Stuck at GND due to stuck port data_in               ; Register  ;
+; u_TFP410_I2C|I2C_WRITE_i|DELY[0..3]      ; Stuck at GND due to stuck port data_in               ; Register  ;
+; u_frame_rx|st~0                          ; Lost fanout                                          ; Register  ;
+; u_frame_rx|st~1                          ; Lost fanout                                          ; Register  ;
+; u_uart_rx|state~0                        ; Lost fanout                                          ; Register  ;
+; u_uart_rx|state~1                        ; Lost fanout                                          ; Register  ;
+; u_TFP410_I2C|ST[6]                       ; Stuck at GND due to stuck port data_in               ; Register  ;
+; Total Number of Removed Nodes = 70       ;                                                      ;           ;
++------------------------------------------+------------------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                               ;
++--------------------------------+----------------------------------------+-----------+---------------------------------------------------------------------+
+; Node name                      ; Reason for Removal                     ; Node Type ; Nodes Removed due to This Node                                      ;
++--------------------------------+----------------------------------------+-----------+---------------------------------------------------------------------+
+; u_TFP410_I2C|I2C_WRITE_i|ST[5] ; Stuck at GND due to stuck port data_in ; Register  ; u_TFP410_I2C|I2C_WRITE_i|DELY[3], u_TFP410_I2C|I2C_WRITE_i|DELY[2], ;
+;                                ;                                        ;           ; u_TFP410_I2C|I2C_WRITE_i|DELY[0], u_TFP410_I2C|I2C_WRITE_i|DELY[1]  ;
++--------------------------------+----------------------------------------+-----------+---------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; General Register Statistics for Partition "root_partition" ;
++----------------------------------------------+-------------+
+; Statistic                                    ; Value       ;
++----------------------------------------------+-------------+
+; Total registers                              ; 512         ;
+; Number of registers using Synchronous Clear  ; 166         ;
+; Number of registers using Synchronous Load   ; 0           ;
+; Number of registers using Asynchronous Clear ; 257         ;
+; Number of registers using Asynchronous Load  ; 0           ;
+; Number of registers using Clock Enable       ; 238         ;
+; Number of registers using Preset             ; 0           ;
++----------------------------------------------+-------------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; u_TFP410_I2C|I2C_WRITE_i|END_OK         ; 13      ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|END_OK ; 4       ;
+; u_TFP410_I2C|I2C_WRITE_i|SCLO           ; 2       ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|SCLO   ; 4       ;
+; u_TFP410_I2C|I2C_READ_DATA_i|SCLO       ; 2       ;
+; u_TFP410_I2C|I2C_WRITE_i|SDAO           ; 2       ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|SDAO   ; 3       ;
+; u_TFP410_I2C|I2C_READ_DATA_i|SDAO       ; 3       ;
+; u_TFP410_I2C|I2C_READ_DATA_i|END_OK     ; 8       ;
+; u_TFP410_I2C|W_POINTER_GO               ; 5       ;
+; u_TFP410_I2C|W_WORD_GO                  ; 6       ;
+; u_TFP410_I2C|R_GO                       ; 5       ;
+; Total number of inverted registers = 12 ;         ;
++-----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+-------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ; Restructuring Performed ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+-------------------------+
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; rx_stretch[17]                           ; Yes                     ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; u_timing|h_cnt[11]                       ; Yes                     ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; u_timing|v_cnt[1]                        ; Yes                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; u_TFP410_I2C|BYTE[0]                     ; Yes                     ;
+; 5:1                ; 17 bits   ; 51 LEs        ; 0 LEs                ; 51 LEs                 ; Yes        ; u_frame_rx|pix_cnt[15]                   ; Yes                     ;
+; 64:1               ; 4 bits    ; 168 LEs       ; 4 LEs                ; 164 LEs                ; Yes        ; u_TFP410_I2C|I2C_READ_DATA_i|CNT[1]      ; Yes                     ;
+; 64:1               ; 8 bits    ; 336 LEs       ; 0 LEs                ; 336 LEs                ; Yes        ; u_TFP410_I2C|I2C_READ_DATA_i|DELY[1]     ; Yes                     ;
+; 33:1               ; 7 bits    ; 154 LEs       ; 7 LEs                ; 147 LEs                ; Yes        ; u_TFP410_I2C|I2C_READ_DATA_i|A[6]        ; Yes                     ;
+; 65:1               ; 4 bits    ; 172 LEs       ; 4 LEs                ; 168 LEs                ; Yes        ; u_TFP410_I2C|I2C_WRITE_i|CNT[3]          ; Yes                     ;
+; 65:1               ; 4 bits    ; 172 LEs       ; 4 LEs                ; 168 LEs                ; Yes        ; u_TFP410_I2C|I2C_WRITE_POINTER_i|CNT[2]  ; Yes                     ;
+; 65:1               ; 3 bits    ; 129 LEs       ; 3 LEs                ; 126 LEs                ; Yes        ; u_TFP410_I2C|I2C_READ_DATA_i|BYTE[2]     ; Yes                     ;
+; 65:1               ; 4 bits    ; 172 LEs       ; 4 LEs                ; 168 LEs                ; Yes        ; u_TFP410_I2C|I2C_WRITE_i|DELY[1]         ; Yes                     ;
+; 65:1               ; 4 bits    ; 172 LEs       ; 4 LEs                ; 168 LEs                ; Yes        ; u_TFP410_I2C|I2C_WRITE_POINTER_i|DELY[0] ; Yes                     ;
+; 34:1               ; 3 bits    ; 66 LEs        ; 3 LEs                ; 63 LEs                 ; Yes        ; u_TFP410_I2C|I2C_WRITE_POINTER_i|A[8]    ; Yes                     ;
+; 34:1               ; 5 bits    ; 110 LEs       ; 10 LEs               ; 100 LEs                ; Yes        ; u_TFP410_I2C|I2C_WRITE_POINTER_i|A[5]    ; Yes                     ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 0 LEs                ; 192 LEs                ; Yes        ; u_TFP410_I2C|DELY[4]                     ; Yes                     ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 4 LEs                ; 84 LEs                 ; Yes        ; u_TFP410_I2C|I2C_WRITE_POINTER_i|ST[5]   ; Yes                     ;
+; 67:1               ; 3 bits    ; 132 LEs       ; 18 LEs               ; 114 LEs                ; Yes        ; u_TFP410_I2C|I2C_WRITE_POINTER_i|ST[3]   ; Yes                     ;
+; 67:1               ; 3 bits    ; 132 LEs       ; 15 LEs               ; 117 LEs                ; Yes        ; u_TFP410_I2C|I2C_READ_DATA_i|ST[5]       ; Yes                     ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 105 LEs              ; 115 LEs                ; Yes        ; u_TFP410_I2C|I2C_WRITE_i|ST[0]           ; Yes                     ;
+; 67:1               ; 3 bits    ; 132 LEs       ; 6 LEs                ; 126 LEs                ; Yes        ; u_TFP410_I2C|I2C_WRITE_i|BYTE[1]         ; Yes                     ;
+; 36:1               ; 3 bits    ; 72 LEs        ; 6 LEs                ; 66 LEs                 ; Yes        ; u_TFP410_I2C|I2C_WRITE_i|A[8]            ; Yes                     ;
+; 36:1               ; 5 bits    ; 120 LEs       ; 10 LEs               ; 110 LEs                ; Yes        ; u_TFP410_I2C|I2C_WRITE_i|A[7]            ; Yes                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; u_TFP410_I2C|i39                         ; Yes                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; u_uart_rx|i95                            ; Yes                     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; u_uart_rx|Select_20                      ; Yes                     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; u_uart_rx|Select_21                      ; Yes                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+-------------------------+
+
+
++--------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions           ;
++----------------------+--------------------------+------+
+; Register Name        ; Megafunction             ; Type ;
++----------------------+--------------------------+------+
+; u_reader|addr[0..16] ; u_frame_buffer|mem_rtl_0 ; RAM  ;
++----------------------+--------------------------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Source Assignments for u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1                                            ;
++---------------------------------+--------------------+------+----+-------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To ; Source Location                                             ;
++---------------------------------+--------------------+------+----+-------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -  ; tmp-clearbox/golden_top/1692/altera_syncram_impl_qerf.tdf:0 ;
++---------------------------------+--------------------+------+----+-------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: u_frame_buffer|mem_rtl_0                                                                    ;
++------------------------------------------------------------+-----------------------------------------------------------------------+---------+
+; Parameter Name                                             ; Value                                                                 ; Type    ;
++------------------------------------------------------------+-----------------------------------------------------------------------+---------+
+; ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES ; DONT CARE                                                             ; Untyped ;
+; ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS      ; AUTO                                                                  ; Untyped ;
+; ACF_DISABLE_MLAB_RAM_USE                                   ; FALSE                                                                 ; Untyped ;
+; ACF_IMPLEMENT_MLAB_IN_16_BIT_DEEP_MODE                     ; FALSE                                                                 ; Untyped ;
+; ADDRESS_ACLR_A                                             ; NONE                                                                  ; Untyped ;
+; ADDRESS_ACLR_B                                             ; NONE                                                                  ; Untyped ;
+; ADDRESS_REG_B                                              ; CLOCK1                                                                ; Untyped ;
+; BYTE_SIZE                                                  ; 8                                                                     ; Untyped ;
+; BYTEENA_REG_B                                              ; CLOCK1                                                                ; Untyped ;
+; CLKEN_POWER_OPTIMIZATION                                   ; OFF                                                                   ; Untyped ;
+; CLOCK_DUTY_CYCLE_DEPENDENCE                                ; AUTO                                                                  ; Untyped ;
+; CLOCK_ENABLE_CORE_A                                        ; USE_INPUT_CLKEN                                                       ; Untyped ;
+; CLOCK_ENABLE_CORE_B                                        ; USE_INPUT_CLKEN                                                       ; Untyped ;
+; CLOCK_ENABLE_INPUT_A                                       ; NORMAL                                                                ; Untyped ;
+; CLOCK_ENABLE_INPUT_B                                       ; NORMAL                                                                ; Untyped ;
+; CLOCK_ENABLE_OUTPUT_A                                      ; NORMAL                                                                ; Untyped ;
+; CLOCK_ENABLE_OUTPUT_B                                      ; NORMAL                                                                ; Untyped ;
+; ECC_PIPELINE_STAGE_ENABLED                                 ; FALSE                                                                 ; Untyped ;
+; ENABLE_COHERENT_READ                                       ; FALSE                                                                 ; Untyped ;
+; ENABLE_ECC                                                 ; FALSE                                                                 ; Untyped ;
+; ENABLE_ECC_ENCODER_BYPASS                                  ; FALSE                                                                 ; Untyped ;
+; ENABLE_FORCE_TO_ZERO                                       ; FALSE                                                                 ; Untyped ;
+; ENABLE_RUNTIME_MOD                                         ; NO                                                                    ; Untyped ;
+; IMPLEMENT_IN_LES                                           ; OFF                                                                   ; Untyped ;
+; INDATA_REG_B                                               ; CLOCK1                                                                ; Untyped ;
+; INIT_FILE                                                  ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/mif/image.mif ; Untyped ;
+; INIT_FILE_LAYOUT                                           ; PORT_A                                                                ; Untyped ;
+; init_file_restructured                                     ; UNUSED                                                                ; Untyped ;
+; INSTANCE_NAME                                              ; UNUSED                                                                ; Untyped ;
+; LOW_POWER_MODE                                             ; AUTO                                                                  ; Untyped ;
+; MAXIMUM_DEPTH                                              ; 0                                                                     ; Untyped ;
+; NUMWORDS_A                                                 ; 129600                                                                ; Untyped ;
+; NUMWORDS_B                                                 ; 129600                                                                ; Untyped ;
+; OPERATION_MODE                                             ; DUAL_PORT                                                             ; Untyped ;
+; OPTIMIZATION_OPTION                                        ; AUTO                                                                  ; Untyped ;
+; OUTDATA_ACLR_A                                             ; NONE                                                                  ; Untyped ;
+; OUTDATA_ACLR_B                                             ; NONE                                                                  ; Untyped ;
+; OUTDATA_REG_A                                              ; UNREGISTERED                                                          ; Untyped ;
+; OUTDATA_REG_B                                              ; UNREGISTERED                                                          ; Untyped ;
+; OUTDATA_SCLR_A                                             ; NONE                                                                  ; Untyped ;
+; OUTDATA_SCLR_B                                             ; NONE                                                                  ; Untyped ;
+; POWER_UP_UNINITIALIZED                                     ; FALSE                                                                 ; Untyped ;
+; RAM_BLOCK_TYPE                                             ; AUTO                                                                  ; Untyped ;
+; RDCONTROL_REG_B                                            ; CLOCK1                                                                ; Untyped ;
+; RDEN_POWER_OPTIMIZATION                                    ; OFF                                                                   ; Untyped ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS                         ; DONT_CARE                                                             ; Untyped ;
+; READ_DURING_WRITE_MODE_PORT_A                              ; NEW_DATA_NO_NBE_READ                                                  ; Untyped ;
+; READ_DURING_WRITE_MODE_PORT_B                              ; NEW_DATA_NO_NBE_READ                                                  ; Untyped ;
+; WIDTH_A                                                    ; 24                                                                    ; Untyped ;
+; WIDTH_B                                                    ; 24                                                                    ; Untyped ;
+; WIDTH_BYTEENA_A                                            ; 1                                                                     ; Untyped ;
+; WIDTH_BYTEENA_B                                            ; 1                                                                     ; Untyped ;
+; WIDTH_ECCENCPARITY                                         ; 8                                                                     ; Untyped ;
+; WIDTH_ECCSTATUS                                            ; 3                                                                     ; Untyped ;
+; WIDTHAD2_A                                                 ; 1                                                                     ; Untyped ;
+; WIDTHAD2_B                                                 ; 1                                                                     ; Untyped ;
+; WIDTHAD_A                                                  ; 17                                                                    ; Untyped ;
+; WIDTHAD_B                                                  ; 17                                                                    ; Untyped ;
+; WREN_POWER_OPTIMIZATION                                    ; OFF                                                                   ; Untyped ;
+; CBXI_PARAMETER                                             ; altera_syncram_k8qg1                                                  ; Untyped ;
+; INDATA_ACLR_A                                              ; NONE                                                                  ; Untyped ;
+; WRCONTROL_ACLR_A                                           ; NONE                                                                  ; Untyped ;
++------------------------------------------------------------+-----------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Partition "root_partition" ;
++------------------------+-----------------------------------------+
+; Type                   ; Count                                   ;
++------------------------+-----------------------------------------+
+; blackbox               ; 1                                       ;
+;     auto_fab_0         ; 1                                       ;
+; boundary_port          ; 42                                      ;
+; tennm_ff               ; 512                                     ;
+;     CLR                ; 94                                      ;
+;     ENA                ; 53                                      ;
+;     ENA CLR            ; 114                                     ;
+;     ENA CLR SCLR       ; 49                                      ;
+;     ENA SCLR           ; 22                                      ;
+;     SCLR               ; 95                                      ;
+;     plain              ; 85                                      ;
+; tennm_lcell_comb       ; 1275                                    ;
+;     arith              ; 255                                     ;
+;         0 data inputs  ; 3                                       ;
+;         1 data inputs  ; 238                                     ;
+;         2 data inputs  ; 14                                      ;
+;     extend             ; 265                                     ;
+;         7 data inputs  ; 12                                      ;
+;         8 data inputs  ; 253                                     ;
+;     normal             ; 755                                     ;
+;         0 data inputs  ; 2                                       ;
+;         1 data inputs  ; 14                                      ;
+;         2 data inputs  ; 83                                      ;
+;         3 data inputs  ; 37                                      ;
+;         4 data inputs  ; 154                                     ;
+;         5 data inputs  ; 345                                     ;
+;         6 data inputs  ; 120                                     ;
+; tennm_ph2_io_obuf      ; 2                                       ;
+; tennm_ph2_iopll        ; 1                                       ;
+; tennm_ram_block        ; 1536                                    ;
+;                        ;                                         ;
+; Number of carry chains ; 14                                      ;
+; Max carry chain length ; 32                                      ;
+;                        ;                                         ;
+; Max LUT depth          ; 4.10                                    ;
+; Average LUT depth      ; 2.92                                    ;
++------------------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Synthesis Resource Usage Summary for Partition "root_partition" ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimate of Logic utilization (ALMs needed) ; 0                 ;
+;                                             ;                   ;
+; Combinational ALUT usage for logic          ; 1275              ;
+;     -- 8 input functions                    ; 253               ;
+;     -- 7 input functions                    ; 12                ;
+;     -- 6 input functions                    ; 120               ;
+;     -- 5 input functions                    ; 345               ;
+;     -- 4 input functions                    ; 154               ;
+;     -- <=3 input functions                  ; 391               ;
+;                                             ;                   ;
+; Dedicated logic registers                   ; 512               ;
+;                                             ;                   ;
+; I/O pins                                    ; 42                ;
+; Total MLAB memory bits                      ; 0                 ;
+; Total block memory bits                     ; 3110400           ;
+;                                             ;                   ;
+; Total DSP Blocks                            ; 0                 ;
+;     -- [A] Total Fixed Point DSP Blocks     ; 0                 ;
+;     -- [B] Total Floating Point DSP Blocks  ; 0                 ;
+;     -- [C] Total DSP_PRIME Blocks           ; 0                 ;
+;                                             ;                   ;
+; Total PLLs                                  ; 1                 ;
+;     -- IOPLLs                               ; 1                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; CLOCK0_50         ;
+; Maximum fan-out                             ; 1751              ;
+; Total fan-out                               ; 47565             ;
+; Average fan-out                             ; 14.12             ;
++---------------------------------------------+-------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Synthesis RAM Summary for Partition "root_partition"                                                                                                                                                                                                                                                                                                                                                   ;
++-----------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-----------------------------------------------------------------------+
+; Name                                                                        ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Logical Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; MIF                                                                   ;
++-----------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-----------------------------------------------------------------------+
+; u_frame_buffer|mem_rtl_0|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM ; AUTO ; Simple Dual Port ; 129600       ; 24           ; 129600       ; 24           ; 3110400      ; 2048                        ; 1518                        ; 2048                        ; 1536                        ; 3110400             ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/mif/image.mif ;
++-----------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-----------------------------------------------------------------------+
+Note: Logical size represents the size at the time of creation, implementation bits is the size at the end of synthesis. If the number of implementation bits is smaller, some slices have optimized away because they have become redundant.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition "auto_fab_0" Resource Utilization by Entity                                                                                                                                                                                                                                                                           ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+----------------+-----------+---------------------------------------------------------------------+---------------------------------------------------------------+-----------------------------------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Boundary Ports ; Max Depth ; Full Hierarchy Name                                                 ; Entity Name                                                   ; Library Name                            ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+----------------+-----------+---------------------------------------------------------------------+---------------------------------------------------------------+-----------------------------------------+
+; |                               ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 1              ; 0.0 (0.0) ; |                                                                   ; golden_top                                                    ; alt_sld_fab_0                           ;
+;    |auto_fab_0|                 ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 1              ; 0.0 (0.0) ; auto_fab_0                                                          ; alt_sld_fab_0                                                 ; N/A                                     ;
+;       |alt_sld_fab_0|           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0              ; 0.0 (0.0) ; auto_fab_0|alt_sld_fab_0                                            ; alt_sld_fab_0_alt_sld_fab_0_10_fkimwiy                        ; alt_sld_fab_0_10                        ;
+;          |alt_sld_fab_0|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0              ; 0.0 (0.0) ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0                              ; alt_sld_fab_0_alt_sld_fab_1920_hwoxyki                        ; alt_sld_fab_1920                        ;
+;             |agilexconfigreset| ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0              ; 0.0 (0.0) ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|agilexconfigreset            ; alt_sld_fab_0_intel_agilex_reset_release_from_sdm_203_poqcpxq ; intel_agilex_reset_release_from_sdm_203 ;
+;                |user_reset|     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0              ; 0.0 (0.0) ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|agilexconfigreset|user_reset ; intel_agilex_reset_release_from_sdm_atom                      ; intel_agilex_reset_release_from_sdm_203 ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+----------------+-----------+---------------------------------------------------------------------+---------------------------------------------------------------+-----------------------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------+
+; General Register Statistics for Partition "auto_fab_0" ;
++----------------------------------------------+---------+
+; Statistic                                    ; Value   ;
++----------------------------------------------+---------+
+; Total registers                              ; 0       ;
+; Number of registers using Synchronous Clear  ; 0       ;
+; Number of registers using Synchronous Load   ; 0       ;
+; Number of registers using Asynchronous Clear ; 0       ;
+; Number of registers using Asynchronous Load  ; 0       ;
+; Number of registers using Clock Enable       ; 0       ;
+; Number of registers using Preset             ; 0       ;
++----------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Partition "auto_fab_0" ;
++------------------------+-------------------------------------+
+; Type                   ; Count                               ;
++------------------------+-------------------------------------+
+; boundary_port          ; 1                                   ;
+; tennm_sdm_gpio_out     ; 1                                   ;
+;                        ;                                     ;
+; Number of carry chains ; 0                                   ;
+; Max carry chain length ; 0                                   ;
+;                        ;                                     ;
+; Max LUT depth          ; 0.00                                ;
+; Average LUT depth      ; 0.00                                ;
++------------------------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Synthesis Resource Usage Summary for Partition "auto_fab_0"                                                                  ;
++---------------------------------------------+--------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                          ;
++---------------------------------------------+--------------------------------------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 0                                                                              ;
+;                                             ;                                                                                ;
+; Combinational ALUT usage for logic          ; 0                                                                              ;
+;     -- 8 input functions                    ; 0                                                                              ;
+;     -- 7 input functions                    ; 0                                                                              ;
+;     -- 6 input functions                    ; 0                                                                              ;
+;     -- 5 input functions                    ; 0                                                                              ;
+;     -- 4 input functions                    ; 0                                                                              ;
+;     -- <=3 input functions                  ; 0                                                                              ;
+;                                             ;                                                                                ;
+; Dedicated logic registers                   ; 0                                                                              ;
+;                                             ;                                                                                ;
+; Boundary Ports                              ; 1                                                                              ;
+;                                             ;                                                                                ;
+; Total DSP Blocks                            ; 0                                                                              ;
+;     -- [A] Total Fixed Point DSP Blocks     ; 0                                                                              ;
+;     -- [B] Total Floating Point DSP Blocks  ; 0                                                                              ;
+;     -- [C] Total DSP_PRIME Blocks           ; 0                                                                              ;
+;                                             ;                                                                                ;
+; Maximum fan-out node                        ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|agilexconfigreset|user_reset|conf_reset ;
+; Maximum fan-out                             ; 1                                                                              ;
+; Total fan-out                               ; 1                                                                              ;
+; Average fan-out                             ; 0.50                                                                           ;
++---------------------------------------------+--------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Warnings for v/I2C_READ_DATA.v                                                                                                                  ;
++------------+----------+-------+-----------------------------------------------------------------------------------------------------------------+
+; Message ID ; Severity ; Count ; Sample Warning                                                                                                  ;
++------------+----------+-------+-----------------------------------------------------------------------------------------------------------------+
+; 13469      ; Warning  ; 4     ; Verilog HDL assignment warning at I2C_READ_DATA.v(72): truncated value with size 5 to match size of target (4)  ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at I2C_READ_DATA.v(72): truncated value with size 5 to match size of target (4)  ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at I2C_READ_DATA.v(95): truncated value with size 5 to match size of target (4)  ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at I2C_READ_DATA.v(98): truncated value with size 9 to match size of target (8)  ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at I2C_READ_DATA.v(109): truncated value with size 5 to match size of target (4) ;
++------------+----------+-------+-----------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Warnings for v/I2C_WRITE.v                                                                                                                  ;
++------------+----------+-------+-------------------------------------------------------------------------------------------------------------+
+; Message ID ; Severity ; Count ; Sample Warning                                                                                              ;
++------------+----------+-------+-------------------------------------------------------------------------------------------------------------+
+; 13469      ; Warning  ; 3     ; Verilog HDL assignment warning at I2C_WRITE.v(71): truncated value with size 5 to match size of target (4)  ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at I2C_WRITE.v(71): truncated value with size 5 to match size of target (4)  ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at I2C_WRITE.v(144): truncated value with size 5 to match size of target (4) ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at I2C_WRITE.v(154): truncated value with size 5 to match size of target (4) ;
++------------+----------+-------+-------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Warnings for v/I2C_WRITE_POINTER.v                                                                                                                  ;
++------------+----------+-------+---------------------------------------------------------------------------------------------------------------------+
+; Message ID ; Severity ; Count ; Sample Warning                                                                                                      ;
++------------+----------+-------+---------------------------------------------------------------------------------------------------------------------+
+; 13469      ; Warning  ; 3     ; Verilog HDL assignment warning at I2C_WRITE_POINTER.v(68): truncated value with size 5 to match size of target (4)  ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at I2C_WRITE_POINTER.v(68): truncated value with size 5 to match size of target (4)  ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at I2C_WRITE_POINTER.v(133): truncated value with size 5 to match size of target (4) ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at I2C_WRITE_POINTER.v(143): truncated value with size 5 to match size of target (4) ;
++------------+----------+-------+---------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Warnings for v/TFP410_I2C.v                                                                                                                    ;
++------------+----------+-------+----------------------------------------------------------------------------------------------------------------+
+; Message ID ; Severity ; Count ; Sample Warning                                                                                                 ;
++------------+----------+-------+----------------------------------------------------------------------------------------------------------------+
+; 13469      ; Warning  ; 2     ; Verilog HDL assignment warning at TFP410_I2C.v(152): truncated value with size 4 to match size of target (3)   ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at TFP410_I2C.v(152): truncated value with size 4 to match size of target (3)   ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at TFP410_I2C.v(193): truncated value with size 11 to match size of target (10) ;
++------------+----------+-------+----------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Warnings for v/frame_buffer.v                                                                                                                                                                                                                  ;
++------------+----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Message ID ; Severity ; Count ; Sample Warning                                                                                                                                                                                                 ;
++------------+----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 276027     ; Warning  ; 1     ; Inferred dual-clock RAM node "u_frame_buffer|mem_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design. ;
++------------+----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Warnings for v/golden_top.v                                                                            ;
++-------------+----------+-------+-----------------------------------------------------------------------+
+; Message ID  ; Severity ; Count ; Sample Warning                                                        ;
++-------------+----------+-------+-----------------------------------------------------------------------+
+; 13024:13410 ; Warning  ; 1     ; Output pins are stuck at VCC or GND : Pin "HDMI_PD_n" is stuck at VCC ;
++-------------+----------+-------+-----------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Warnings for v/img_reader.v                                                                                                                   ;
++------------+----------+-------+---------------------------------------------------------------------------------------------------------------+
+; Message ID ; Severity ; Count ; Sample Warning                                                                                                ;
++------------+----------+-------+---------------------------------------------------------------------------------------------------------------+
+; 13469      ; Warning  ; 1     ; Verilog HDL assignment warning at img_reader.v(20): truncated value with size 20 to match size of target (17) ;
++------------+----------+-------+---------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Warnings for v/video_timing.v                                                                                                                   ;
++------------+----------+-------+-----------------------------------------------------------------------------------------------------------------+
+; Message ID ; Severity ; Count ; Sample Warning                                                                                                  ;
++------------+----------+-------+-----------------------------------------------------------------------------------------------------------------+
+; 13469      ; Warning  ; 2     ; Verilog HDL assignment warning at video_timing.v(57): truncated value with size 32 to match size of target (11) ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at video_timing.v(57): truncated value with size 32 to match size of target (11) ;
+;     13469  ;          ;       ; Verilog HDL assignment warning at video_timing.v(58): truncated value with size 32 to match size of target (11) ;
++------------+----------+-------+-----------------------------------------------------------------------------------------------------------------+
+
+
++--------------------+
+; Synthesis Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Synthesis
+    Info: Version 26.1.1 Build 130 08/06/2026 SC Pro Edition
+    Info: Processing started: Wed Nov 25 17:55:55 2026
+    Info: System process ID: 1692
+Info: Command: quartus_syn --read_settings_files=on --write_settings_files=off A3_Real_Time_Image_Processing -c golden_top
+Info: qis_default_flow_script.tcl version: #1
+Info: Initializing Synthesis...
+Info: Project = "A3_Real_Time_Image_Processing"
+Info: Revision = "golden_top"
+Info (21958): Initialized Quartus Message Database
+Info: Analyzing source files
+Info: Elaborating from top-level entity "golden_top"
+Info (18235): Library search order is as follows: "altera_iopll_2110; V_PLL; altera_s10_user_rst_clkgate_1949; reset_release". Quartus will look for undefined design units in your libraries in that order. To modify the ordering, please specify a semi-colon separated library list using the assignment LIBRARY_SEARCH_ORDER.
+Info (19337): VHDL info at altera_agilex_config_reset_release_endpoint.vhd(122): executing entity "altera_agilex_config_reset_release_endpoint" with architecture "rtl" File: c:/altera_pro/26.1.1/quartus/libraries/megafunctions/altera_agilex_config_reset_release_endpoint.vhd Line: 122
+Info (19337): VHDL info at altera_fabric_endpoint.vhd(126): executing entity "altera_fabric_endpoint(send_width=0,receive_width=1,settings="{fabric agilex_config_reset_release dir agent psig 142e1a3c}")(1,60)" with architecture "rtl" File: c:/altera_pro/26.1.1/quartus/libraries/megafunctions/altera_fabric_endpoint.vhd Line: 126
+Warning (13469): Verilog HDL assignment warning at TFP410_I2C.v(152): truncated value with size 4 to match size of target (3) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/TFP410_I2C.v Line: 152
+Warning (13469): Verilog HDL assignment warning at TFP410_I2C.v(193): truncated value with size 11 to match size of target (10) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/TFP410_I2C.v Line: 193
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE.v(71): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE.v Line: 71
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE.v(144): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE.v Line: 144
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE.v(154): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE.v Line: 154
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE_POINTER.v(68): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE_POINTER.v Line: 68
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE_POINTER.v(133): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE_POINTER.v Line: 133
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE_POINTER.v(143): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE_POINTER.v Line: 143
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(72): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_READ_DATA.v Line: 72
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(95): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_READ_DATA.v Line: 95
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(98): truncated value with size 9 to match size of target (8) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_READ_DATA.v Line: 98
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(109): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_READ_DATA.v Line: 109
+Warning (13469): Verilog HDL assignment warning at video_timing.v(57): truncated value with size 32 to match size of target (11) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/video_timing.v Line: 57
+Warning (13469): Verilog HDL assignment warning at video_timing.v(58): truncated value with size 32 to match size of target (11) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/video_timing.v Line: 58
+Warning (13469): Verilog HDL assignment warning at img_reader.v(20): truncated value with size 20 to match size of target (17) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/img_reader.v Line: 20
+Info (22567): Verilog HDL info at frame_buffer.v(23): extracting RAM for identifier 'mem' File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/frame_buffer.v Line: 23
+Info: Found 21 design entities
+Info: There are 21 partitions after elaboration.
+Info: Running rule checking for Agilex5 protocol IPs...
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab_0.
+Info (11172): ***************************************************************
+Info (11172): Quartus is a registered trademark of Altera Corporation in the
+Info (11172): US and other countries.  Portions of the Quartus Prime software
+Info (11172): Code, and other portions of the code included in this download
+Info (11172): Or on this DVD, are licensed to Altera Corporation and are the
+Info (11172): Copyrighted property of third parties. For license details,
+Info (11172): Refer to the Altera Software License Subscription Agreements 
+Info (11172): On the Quartus Prime software download page.
+Info (11172): ***************************************************************
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Deploying alt_sld_fab_0 to C:\QUARTUS_PRIME_PROJECTS\A3_Real_Time_Image_Processing\dni\sandboxes\SOUMYA_1692_0\sld\ipgen\alt_sld_fab_0.ip
+Info (11172): ***************************************************************
+Info (11172): Quartus is a registered trademark of Altera Corporation in the
+Info (11172): US and other countries.  Portions of the Quartus Prime software
+Info (11172): Code, and other portions of the code included in this download
+Info (11172): Or on this DVD, are licensed to Altera Corporation and are the
+Info (11172): Copyrighted property of third parties. For license details,
+Info (11172): Refer to the Altera Software License Subscription Agreements 
+Info (11172): On the Quartus Prime software download page.
+Info (11172): ***************************************************************
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Saving generation log to C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0_generation.rpt
+Info (11172): Generated by version: 26.1.1 build 130
+Info (11172): Starting: Create HDL design files for synthesis
+Info (11172): Qsys-generate C:\QUARTUS_PRIME_PROJECTS\A3_Real_Time_Image_Processing\dni\sandboxes\SOUMYA_1692_0\sld\ipgen\alt_sld_fab_0.ip --synthesis=VERILOG --output-directory=C:\QUARTUS_PRIME_PROJECTS\A3_Real_Time_Image_Processing\dni\sandboxes\SOUMYA_1692_0\sld\ipgen\alt_sld_fab_0 --family="Agilex 3" --part=A3CZ135BB18AE7S
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Alt_sld_fab_0: "Transforming system: alt_sld_fab_0"
+Info (11172): Alt_sld_fab_0: "Naming system components in system: alt_sld_fab_0"
+Info (11172): Alt_sld_fab_0: "Processing generation queue"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_alt_sld_fab_0_10_fkimwiy"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_alt_sld_fab_1920_hwoxyki"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_altera_sld_splitter_1920_tbvre7y"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_intel_agilex_reset_release_from_sdm_203_poqcpxq"
+Info (11172): Alt_sld_fab_0: Done "alt_sld_fab_0" with 5 modules, 6 files
+Info (11172): Finished: Create HDL design files for synthesis
+Info (11172): Generation of C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0.ip (alt_sld_fab_0) took 1259 ms
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab_0.
+Info: DA report generation in native DNI mode
+Info (21615): Running Design Assistant Rules for snapshot 'partitioned'
+Info: No waiver waived any violations
+Info (22360): Design Assistant Results: 28 of 29 enabled rules passed, and 1 rules was disabled, in snapshot 'partitioned'
+Info (21660): Design Assistant Results: 0 of 19 Critical severity rules issued violations in snapshot 'partitioned'
+Info (21661): Design Assistant Results: 0 of 1 High severity rules issued violations in snapshot 'partitioned'
+Info (21621): Design Assistant Results: 1 of 1 Medium severity rules issued violations in snapshot 'partitioned'. Please refer to DRC report 'C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/output_files/golden_top.drc.partitioned.rpt' for more information
+Info (21622): Design Assistant Results: 0 of 8 Low severity rules issued violations in snapshot 'partitioned'
+Info: Synthesizing partition "root_partition"
+Warning (276027): Inferred dual-clock RAM node "u_frame_buffer|mem_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design. File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/frame_buffer.v Line: 23
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "u_frame_buffer|mem_rtl_0"  File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/frame_buffer.v Line: 23
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 24
+        Info (286033): Parameter WIDTHAD_A set to 17
+        Info (286033): Parameter NUMWORDS_A set to 129600
+        Info (286033): Parameter WIDTH_B set to 24
+        Info (286033): Parameter WIDTHAD_B set to 17
+        Info (286033): Parameter NUMWORDS_B set to 129600
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/mif/image.mif
+Info (284007): State machine "u_frame_rx|st" will be implemented as a safe state machine. File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/uart_frame_rx.v Line: 36
+Info (284007): State machine "u_uart_rx|state" will be implemented as a safe state machine. File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/uart_rx.v Line: 26
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HDMI_PD_n" is stuck at VCC File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/golden_top.v Line: 17
+Info (17049): 20 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 2948 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 34 output pins
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 1368 logic cells
+    Info (21064): Implemented 1536 RAM segments
+    Info (21071): Implemented 1 partitions
+Info: Successfully synthesized partition
+Info: Synthesizing partition "auto_fab_0"
+Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 0 input pins
+    Info (21059): Implemented 1 output pins
+Info: Successfully synthesized partition
+Info: Saving post-synthesis snapshots for 2 partition(s)
+Info (21615): Running Design Assistant Rules for snapshot 'synthesized'
+Info: No waiver waived any violations
+Info (22360): Design Assistant Results: 10 of 13 enabled rules passed, and 7 rules was disabled, in snapshot 'synthesized'
+Info (21661): Design Assistant Results: 0 of 1 High severity rules issued violations in snapshot 'synthesized'
+Info (21621): Design Assistant Results: 2 of 6 Medium severity rules issued violations in snapshot 'synthesized'. Please refer to DRC report 'C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/output_files/golden_top.drc.synthesized.rpt' for more information
+Info (21622): Design Assistant Results: 1 of 6 Low severity rules issued violations in snapshot 'synthesized'. Please refer to DRC report 'C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/output_files/golden_top.drc.synthesized.rpt' for more information
+Info: Quartus Prime Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 1269 megabytes
+    Info: Processing ended: Wed Nov 25 17:57:44 2026
+    Info: Elapsed time: 00:01:49
+    Info: System process ID: 1692
+
+

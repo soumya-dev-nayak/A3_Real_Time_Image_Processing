@@ -1,0 +1,362 @@
+Synthesis Analysis & Elaboration Stage Report for golden_top
+Wed Nov 25 17:57:35 2026
+Quartus Prime Version 26.1.1 Build 130 08/06/2026 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Source Assignments for User Entity TFP410_I2C Instance: u_TFP410_I2C
+  3. Ignored Source Level Assignments for User Entity frame_buffer Instance: u_frame_buffer
+  4. Source Assignments for User Entity V_PLL_altera_iopll_2110_ctesofa Instance: u_V_PLL|iopll_0
+  5. Parameter Settings for User Entity RESET_DELY Instance: u_RESET_DELY
+  6. Parameter Settings for User Entity TFP410_I2C Instance: u_TFP410_I2C
+  7. Parameter Settings for User Entity uart_rx Instance: u_uart_rx
+  8. Parameter Settings for User Entity uart_frame_rx Instance: u_frame_rx
+  9. Parameter Settings for User Entity video_timing Instance: u_timing
+ 10. Parameter Settings for User Entity img_reader Instance: u_reader
+ 11. Parameter Settings for User Entity sync_delay Instance: u_sync_delay
+ 12. System Level Debug Agent Report
+ 13. Assignments with Invalid Source or Target
+ 14. Top Causes of Logic Optimized Away During Sweep
+ 15. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2026  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Source Assignments for User Entity TFP410_I2C Instance: u_TFP410_I2C                 ;
++-----------------------------------+-------+------+----------------+------------------+
+; Assignment                        ; Value ; From ; To             ; Source Location  ;
++-----------------------------------+-------+------+----------------+------------------+
+; IGNORE_LCELL_BUFFERS              ; OFF   ; -    ; const_zero_sig ; TFP410_I2C.v:215 ;
+; REMOVE_REDUNDANT_LOGIC_CELLS      ; OFF   ; -    ; const_zero_sig ; TFP410_I2C.v:215 ;
+; IMPLEMENT_AS_OUTPUT_OF_LOGIC_CELL ; ON    ; -    ; const_zero_sig ; TFP410_I2C.v:214 ;
++-----------------------------------+-------+------+----------------+------------------+
+All Instances:
+u_TFP410_I2C
+
+
+
++----------------------------------------------------------------------------------------+
+; Ignored Source Level Assignments for User Entity frame_buffer Instance: u_frame_buffer ;
++------------+--------+-----+-------------------------+----------------------------------+
+; Assignment ; Value  ; To  ; Reason                  ; Source Location                  ;
++------------+--------+-----+-------------------------+----------------------------------+
+; ram_style  ; "M20K" ; mem ; Invalid assignment name ; v/frame_buffer.v:23              ;
++------------+--------+-----+-------------------------+----------------------------------+
+All Instances:
+u_frame_buffer
+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Source Assignments for User Entity V_PLL_altera_iopll_2110_ctesofa Instance: u_V_PLL|iopll_0                   ;
++-----------------------------------+-----------+------+-----------------+---------------------------------------+
+; Assignment                        ; Value     ; From ; To              ; Source Location                       ;
++-----------------------------------+-----------+------+-----------------+---------------------------------------+
+; IGNORE_LCELL_BUFFERS              ; OFF       ; -    ; gnd             ; V_PLL_altera_iopll_2110_ctesofa.v:74  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS      ; OFF       ; -    ; gnd             ; V_PLL_altera_iopll_2110_ctesofa.v:74  ;
+; DESIGN_ASSISTANT_EXCLUDE          ; RES-50002 ; -    ; tennm_ph2_iopll ; V_PLL_altera_iopll_2110_ctesofa.v:178 ;
+; IMPLEMENT_AS_OUTPUT_OF_LOGIC_CELL ; ON        ; -    ; gnd             ; V_PLL_altera_iopll_2110_ctesofa.v:74  ;
++-----------------------------------+-----------+------+-----------------+---------------------------------------+
+All Instances:
+u_V_PLL|iopll_0
+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity RESET_DELY Instance: u_RESET_DELY ;
++----------------+-----------+-----------------------------------------+
+; Parameter Name ; Value     ; Type                                    ;
++----------------+-----------+-----------------------------------------+
+; SEC            ; 50000000  ; Signed Integer                          ;
+; SEC0d5         ; 25000000  ; Signed Integer                          ;
+; SEC1           ; 50000000  ; Signed Integer                          ;
+; SEC10          ; 500000000 ; Signed Integer                          ;
+; SEC2           ; 100000000 ; Signed Integer                          ;
++----------------+-----------+-----------------------------------------+
+All Instances:
+u_RESET_DELY
+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity TFP410_I2C Instance: u_TFP410_I2C ;
++----------------+----------+------------------------------------------+
+; Parameter Name ; Value    ; Type                                     ;
++----------------+----------+------------------------------------------+
+; P_CTL_1_MODE   ; 00001000 ; Unsigned Binary                          ;
+; P_DEV_ID       ; 00000010 ; Unsigned Binary                          ;
+; P_VEN_ID       ; 00000000 ; Unsigned Binary                          ;
+; READ_MAX       ; 2        ; Signed Integer                           ;
+; WRITE_MAX      ; 1        ; Signed Integer                           ;
++----------------+----------+------------------------------------------+
+All Instances:
+u_TFP410_I2C
+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity uart_rx Instance: u_uart_rx ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; CLKS_PER_BIT   ; 434   ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+All Instances:
+u_uart_rx
+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity uart_frame_rx Instance: u_frame_rx ;
++----------------+--------+---------------------------------------------+
+; Parameter Name ; Value  ; Type                                        ;
++----------------+--------+---------------------------------------------+
+; PIXELS         ; 129600 ; Signed Integer                              ;
++----------------+--------+---------------------------------------------+
+All Instances:
+u_frame_rx
+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity video_timing Instance: u_timing ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; HS_ACTIVE      ; 0     ; Signed Integer                            ;
+; H_ACT          ; 1920  ; Signed Integer                            ;
+; H_BP           ; 148   ; Signed Integer                            ;
+; H_FP           ; 88    ; Signed Integer                            ;
+; H_SYNC         ; 44    ; Signed Integer                            ;
+; VS_ACTIVE      ; 0     ; Signed Integer                            ;
+; V_ACT          ; 1080  ; Signed Integer                            ;
+; V_BP           ; 36    ; Signed Integer                            ;
+; V_FP           ; 4     ; Signed Integer                            ;
+; V_SYNC         ; 5     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+All Instances:
+u_timing
+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity img_reader Instance: u_reader ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; IMG_W          ; 480   ; Signed Integer                          ;
+; SHIFT          ; 2     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+All Instances:
+u_reader
+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity sync_delay Instance: u_sync_delay ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; N              ; 3     ; Signed Integer                              ;
+; W              ; 3     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+All Instances:
+u_sync_delay
+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; System Level Debug Agent Report                                                                                            ;
++-------------------------------------------------------------------------+----------------+-----------+---------------------+
+; Agent Hierarchy Path                                                    ; Instance Index ; Host Name ; Host Hierarchy Path ;
++-------------------------------------------------------------------------+----------------+-----------+---------------------+
+; u_reset_release|s10_user_rst_clkgate_0|config_reset_release_endpoint|ep ;                ;           ;                     ;
++-------------------------------------------------------------------------+----------------+-----------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignments with Invalid Source or Target                                                                                                                                                ;
++-----------------+-------------------------+------------+--------+--------------+-------------+--------------+----------------------------------------------------------------------------+
+; Assignment Name ; Sample Assignment Value ; Entity     ; Source ; Source Valid ; Target      ; Target Valid ; Location                                                                   ;
++-----------------+-------------------------+------------+--------+--------------+-------------+--------------+----------------------------------------------------------------------------+
+; IO_STANDARD     ; 3.3-V LVCMOS            ; golden_top ;        ;              ; DDC_I2C_SCL ; No           ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/golden_top.qsf:141 ;
+; IO_STANDARD     ; 3.3-V LVCMOS            ; golden_top ;        ;              ; DDC_I2C_SDA ; No           ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/golden_top.qsf:142 ;
++-----------------+-------------------------+------------+--------+--------------+-------------+--------------+----------------------------------------------------------------------------+
+Sources or targets that are created in Fitter might appear here, safely ignore those. Refer to Fitter's Ignored Assignments Report for a more accurate list.
+
+
+Top root causes of logic optimization that have been identified during sweep. For more details and filtering options, ensure that you have compiled with the "Enable RTL Analysis Debug Mode " setting turned on under Assignments->Settings->Compiler Settings, then go to the " Root Causes Tab " in the " Sweep Hints Viewer " tool in the " RTL Analyzer ".
++--------------------------------------------------------------------------------+
+; Top Causes of Logic Optimized Away During Sweep                                ;
++-------------------------+------------------+-------------+---------------------+
+; Root Object Path        ; Root Object Type ; Root Reason ; Swept Objects Count ;
++-------------------------+------------------+-------------+---------------------+
+; u_TFP410_I2C|DEV_ID[15] ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[14] ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[13] ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[12] ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[11] ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[10] ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[9]  ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[8]  ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[7]  ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
+; u_TFP410_I2C|DEV_ID[6]  ; OUTPUT_INST_PORT ; lost_fanout ; 5                   ;
++-------------------------+------------------+-------------+---------------------+
+Table limited at 10 items. To change the number of top root causes reported, set the "Number of Top Root Causes Reported in Synthesis Report " option under Assignments->Settings->Compiler Settings->Advanced Settings (Synthesis)
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Synthesis
+    Info: Version 26.1.1 Build 130 08/06/2026 SC Pro Edition
+    Info: Processing started: Wed Nov 25 17:55:55 2026
+    Info: System process ID: 1692
+Info: Command: quartus_syn --read_settings_files=on --write_settings_files=off A3_Real_Time_Image_Processing -c golden_top
+Info: qis_default_flow_script.tcl version: #1
+Info: Initializing Synthesis...
+Info: Project = "A3_Real_Time_Image_Processing"
+Info: Revision = "golden_top"
+Info (21958): Initialized Quartus Message Database
+Info: Analyzing source files
+Info: Elaborating from top-level entity "golden_top"
+Info (18235): Library search order is as follows: "altera_iopll_2110; V_PLL; altera_s10_user_rst_clkgate_1949; reset_release". Quartus will look for undefined design units in your libraries in that order. To modify the ordering, please specify a semi-colon separated library list using the assignment LIBRARY_SEARCH_ORDER.
+Info (19337): VHDL info at altera_agilex_config_reset_release_endpoint.vhd(122): executing entity "altera_agilex_config_reset_release_endpoint" with architecture "rtl" File: c:/altera_pro/26.1.1/quartus/libraries/megafunctions/altera_agilex_config_reset_release_endpoint.vhd Line: 122
+Info (19337): VHDL info at altera_fabric_endpoint.vhd(126): executing entity "altera_fabric_endpoint(send_width=0,receive_width=1,settings="{fabric agilex_config_reset_release dir agent psig 142e1a3c}")(1,60)" with architecture "rtl" File: c:/altera_pro/26.1.1/quartus/libraries/megafunctions/altera_fabric_endpoint.vhd Line: 126
+Warning (13469): Verilog HDL assignment warning at TFP410_I2C.v(152): truncated value with size 4 to match size of target (3) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/TFP410_I2C.v Line: 152
+Warning (13469): Verilog HDL assignment warning at TFP410_I2C.v(193): truncated value with size 11 to match size of target (10) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/TFP410_I2C.v Line: 193
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE.v(71): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE.v Line: 71
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE.v(144): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE.v Line: 144
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE.v(154): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE.v Line: 154
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE_POINTER.v(68): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE_POINTER.v Line: 68
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE_POINTER.v(133): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE_POINTER.v Line: 133
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE_POINTER.v(143): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_WRITE_POINTER.v Line: 143
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(72): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_READ_DATA.v Line: 72
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(95): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_READ_DATA.v Line: 95
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(98): truncated value with size 9 to match size of target (8) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_READ_DATA.v Line: 98
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(109): truncated value with size 5 to match size of target (4) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/I2C_READ_DATA.v Line: 109
+Warning (13469): Verilog HDL assignment warning at video_timing.v(57): truncated value with size 32 to match size of target (11) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/video_timing.v Line: 57
+Warning (13469): Verilog HDL assignment warning at video_timing.v(58): truncated value with size 32 to match size of target (11) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/video_timing.v Line: 58
+Warning (13469): Verilog HDL assignment warning at img_reader.v(20): truncated value with size 20 to match size of target (17) File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/img_reader.v Line: 20
+Info (22567): Verilog HDL info at frame_buffer.v(23): extracting RAM for identifier 'mem' File: C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/v/frame_buffer.v Line: 23
+Info: Found 21 design entities
+Info: There are 21 partitions after elaboration.
+Info: Running rule checking for Agilex5 protocol IPs...
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab_0.
+Info (11172): ***************************************************************
+Info (11172): Quartus is a registered trademark of Altera Corporation in the
+Info (11172): US and other countries.  Portions of the Quartus Prime software
+Info (11172): Code, and other portions of the code included in this download
+Info (11172): Or on this DVD, are licensed to Altera Corporation and are the
+Info (11172): Copyrighted property of third parties. For license details,
+Info (11172): Refer to the Altera Software License Subscription Agreements 
+Info (11172): On the Quartus Prime software download page.
+Info (11172): ***************************************************************
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Deploying alt_sld_fab_0 to C:\QUARTUS_PRIME_PROJECTS\A3_Real_Time_Image_Processing\dni\sandboxes\SOUMYA_1692_0\sld\ipgen\alt_sld_fab_0.ip
+Info (11172): ***************************************************************
+Info (11172): Quartus is a registered trademark of Altera Corporation in the
+Info (11172): US and other countries.  Portions of the Quartus Prime software
+Info (11172): Code, and other portions of the code included in this download
+Info (11172): Or on this DVD, are licensed to Altera Corporation and are the
+Info (11172): Copyrighted property of third parties. For license details,
+Info (11172): Refer to the Altera Software License Subscription Agreements 
+Info (11172): On the Quartus Prime software download page.
+Info (11172): ***************************************************************
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Saving generation log to C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0_generation.rpt
+Info (11172): Generated by version: 26.1.1 build 130
+Info (11172): Starting: Create HDL design files for synthesis
+Info (11172): Qsys-generate C:\QUARTUS_PRIME_PROJECTS\A3_Real_Time_Image_Processing\dni\sandboxes\SOUMYA_1692_0\sld\ipgen\alt_sld_fab_0.ip --synthesis=VERILOG --output-directory=C:\QUARTUS_PRIME_PROJECTS\A3_Real_Time_Image_Processing\dni\sandboxes\SOUMYA_1692_0\sld\ipgen\alt_sld_fab_0 --family="Agilex 3" --part=A3CZ135BB18AE7S
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Alt_sld_fab_0: "Transforming system: alt_sld_fab_0"
+Info (11172): Alt_sld_fab_0: "Naming system components in system: alt_sld_fab_0"
+Info (11172): Alt_sld_fab_0: "Processing generation queue"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_alt_sld_fab_0_10_fkimwiy"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_alt_sld_fab_1920_hwoxyki"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_altera_sld_splitter_1920_tbvre7y"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_intel_agilex_reset_release_from_sdm_203_poqcpxq"
+Info (11172): Alt_sld_fab_0: Done "alt_sld_fab_0" with 5 modules, 6 files
+Info (11172): Finished: Create HDL design files for synthesis
+Info (11172): Generation of C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0.ip (alt_sld_fab_0) took 1259 ms
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab_0.
+Info: DA report generation in native DNI mode
+Info (21615): Running Design Assistant Rules for snapshot 'partitioned'
+Info: No waiver waived any violations
+Info (22360): Design Assistant Results: 28 of 29 enabled rules passed, and 1 rules was disabled, in snapshot 'partitioned'
+Info (21660): Design Assistant Results: 0 of 19 Critical severity rules issued violations in snapshot 'partitioned'
+Info (21661): Design Assistant Results: 0 of 1 High severity rules issued violations in snapshot 'partitioned'
+Info (21621): Design Assistant Results: 1 of 1 Medium severity rules issued violations in snapshot 'partitioned'. Please refer to DRC report 'C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/output_files/golden_top.drc.partitioned.rpt' for more information
+Info (21622): Design Assistant Results: 0 of 8 Low severity rules issued violations in snapshot 'partitioned'
+
+

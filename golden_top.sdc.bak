@@ -1,0 +1,13 @@
+# CLOCK0_50 (50 MHz) is already created by the V_PLL IP's own SDC,
+# and the PLL output clocks are generated automatically.
+derive_clock_uncertainty
+
+# 400 kHz I2C clock made by CLOCKMEM (50 MHz / 128)
+create_generated_clock -name CLK_400K -source [get_ports CLOCK0_50] -divide_by 128 [get_registers {u_TFP410_I2C|K0|CK_1HZ}]
+
+# PLL "locked" is asynchronous to the pixel clock. It feeds only the
+# rst_pipe synchronizer, so this path must not be timed.
+set_false_path -from [get_clocks {u_V_PLL|iopll_0|tennm_ph2_iopll|ref_clk0}] -to [get_clocks {u_V_PLL|iopll_0_outclk0}]
+
+# buttons and switches are human inputs
+set_false_path -from [get_ports {KEY[*] SW[*]}]

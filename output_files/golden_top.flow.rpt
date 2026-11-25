@@ -1,0 +1,129 @@
+Flow report for golden_top
+Wed Nov 25 18:01:54 2026
+Quartus Prime Version 26.1.1 Build 130 08/06/2026 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Flow Summary
+  2. Flow Settings
+  3. Flow Non-Default Global Settings
+  4. Flow Elapsed Time
+  5. Flow OS Summary
+  6. Flow Log
+  7. Legal Notice
+
+
+
++------------------------------------------------------------------------------+
+; Flow Summary                                                                 ;
++---------------------------------+--------------------------------------------+
+; Flow Status                     ; Successful - Wed Nov 25 18:01:54 2026      ;
+; Quartus Prime Version           ; 26.1.1 Build 130 08/06/2026 SC Pro Edition ;
+; Revision Name                   ; golden_top                                 ;
+; Top-level Entity Name           ; golden_top                                 ;
+; Family                          ; Agilex 3                                   ;
+; Device                          ; A3CZ135BB18AE7S                            ;
+; Timing Models                   ; Final                                      ;
+; Power Models                    ; Final                                      ;
+; Device Status                   ; Final                                      ;
+; Logic utilization (in ALMs)     ; 870 / 45,800 ( 2 % )                       ;
+; Total dedicated logic registers ; 694                                        ;
+; Total pins                      ; 43 / 208 ( 21 % )                          ;
+; Total block memory bits         ; 3,110,400 / 7,229,440 ( 43 % )             ;
+; Total RAM Blocks                ; 191 / 353 ( 54 % )                         ;
+; Total DSP Blocks                ; 0 / 368 ( 0 % )                            ;
+; Total HSSI HPS                  ; 0 / 1 ( 0 % )                              ;
+; Total PLLs                      ; 1 / 11 ( 9 % )                             ;
++---------------------------------+--------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 11/25/2026 17:56:08 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; golden_top          ;
++-------------------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                                           ;
++----------------------------+------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------+
+; Assignment Name            ; Value                                                                                                                              ; Default Value ; Entity Name ; Section Id ;
++----------------------------+------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID      ; 28974942037115.179560956801692                                                                                                     ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP     ; 100                                                                                                                                ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP     ; 0                                                                                                                                  ; --            ; --          ; --         ;
+; MISC_FILE                  ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.cmp      ; --            ; --          ; --         ;
+; MISC_FILE                  ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0.ip                     ; --            ; --          ; --         ;
+; MISC_FILE                  ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/ip/V_PLL/V_PLL.cmp                                                         ; --            ; --          ; --         ;
+; MISC_FILE                  ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/ip/V_PLL.ip                                                                ; --            ; --          ; --         ;
+; MISC_FILE                  ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/ip/reset_release/reset_release.cmp                                         ; --            ; --          ; --         ;
+; MISC_FILE                  ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/ip/reset_release.ip                                                        ; --            ; --          ; --         ;
+; POWER_APPLY_THERMAL_MARGIN ; ADDITIONAL                                                                                                                         ; Off           ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY   ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/output_files                                                               ; --            ; --          ; --         ;
+; SOPCINFO_FILE              ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/dni/sandboxes/SOUMYA_1692_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.sopcinfo ; --            ; --          ; --         ;
+; SOPCINFO_FILE              ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/ip/V_PLL/V_PLL.sopcinfo                                                    ; --            ; --          ; --         ;
+; SOPCINFO_FILE              ; C:/QUARTUS_PRIME_PROJECTS/A3_Real_Time_Image_Processing/ip/reset_release/reset_release.sopcinfo                                    ; --            ; --          ; --         ;
++----------------------------+------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------+
+
+
++------------------------------------------------------+
+; Flow Elapsed Time                                    ;
++-----------------+--------------+---------------------+
+; Module Name     ; Elapsed Time ; Peak Virtual Memory ;
++-----------------+--------------+---------------------+
+; Synthesis       ; 00:01:49     ; 1269 MB             ;
+; Fitter          ; 00:03:23     ; 4527 MB             ;
+; Timing Analyzer ; 00:00:17     ; 1252 MB             ;
+; Assembler       ; 00:00:23     ; 2738 MB             ;
+; Total           ; 00:05:52     ; --                  ;
++-----------------+--------------+---------------------+
+
+
++-------------------------------------------------------------------------------+
+; Flow OS Summary                                                               ;
++-----------------+------------------+------------+------------+----------------+
+; Module Name     ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++-----------------+------------------+------------+------------+----------------+
+; Synthesis       ; SOUMYA           ; Windows 11 ; 10.0.26300 ; x86_64         ;
+; Fitter          ; SOUMYA           ; Windows 11 ; 10.0.26300 ; x86_64         ;
+; Timing Analyzer ; SOUMYA           ; Windows 11 ; 10.0.26300 ; x86_64         ;
+; Assembler       ; SOUMYA           ; Windows 11 ; 10.0.26300 ; x86_64         ;
++-----------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_syn --read_settings_files=on --write_settings_files=off A3_Real_Time_Image_Processing -c golden_top
+quartus_fit --read_settings_files=on --write_settings_files=off A3_Real_Time_Image_Processing -c golden_top
+quartus_sta A3_Real_Time_Image_Processing -c golden_top --mode=finalize
+quartus_asm --read_settings_files=on --write_settings_files=off A3_Real_Time_Image_Processing -c golden_top
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2026  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+

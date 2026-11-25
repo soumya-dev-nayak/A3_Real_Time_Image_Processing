@@ -1,0 +1,486 @@
+Design Assistant report for golden_top
+Wed Nov 25 17:57:44 2026
+Quartus Prime Version 26.1.1 Build 130 08/06/2026 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant (Synthesized) Results - 3 of 13 Rules Failed
+  3. RES-30134 - Registers Not Reachable from Reset Release IP
+  4. RES-30132 - Registers May Not Be Properly Reset
+  5. FLP-10500 - Non Driving Top Level Inputs Found
+  6. LNT-30011 - Design Contains Combinational Loops
+  7. LNT-30017 - Register Output Driving Its Own Asynchronous Control Signal Directly or Through Combinational Logic
+  8. LNT-30023 - Reset Nets with Polarity Conflict
+  9. RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Modified Before the FPGA Enters User Mode
+ 10. TMC-20052 - Paths with Post Synthesis Inferred Latches
+ 11. LNT-30010 - Nets Driving both Reset and Clock Enable Signals
+ 12. LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch
+ 13. TMC-20053 - DSP Inputs Driven by High Fan-Out Net
+ 14. TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible
+ 15. TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2026  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant (Synthesized) Results - 3 of 13 Rules Failed                                                                                                                          ;
++---------------------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+; Rule                                                                                                                ; Severity ; Violations ; Waived ; Tags                            ;
++---------------------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+; RES-30134 - Registers Not Reachable from Reset Release IP                                                           ; Medium   ; 261        ; 0      ; reset-usage, reset-reachability ;
+; RES-30132 - Registers May Not Be Properly Reset                                                                     ; Medium   ; 22         ; 0      ; reset-usage, reset-reachability ;
+; FLP-10500 - Non Driving Top Level Inputs Found                                                                      ; Low      ; 1          ; 0      ; system                          ;
+; LNT-30011 - Design Contains Combinational Loops                                                                     ; High     ; 0          ; 0      ; nonstandard-timing              ;
+; LNT-30017 - Register Output Driving Its Own Asynchronous Control Signal Directly or Through Combinational Logic     ; Medium   ; 0          ; 0      ; nonstandard-timing              ;
+; LNT-30023 - Reset Nets with Polarity Conflict                                                                       ; Medium   ; 0          ; 0      ; reset-usage                     ;
+; RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Modified Before the FPGA Enters User Mode ; Medium   ; 0          ; 0      ; ram, reset-usage                ;
+; TMC-20052 - Paths with Post Synthesis Inferred Latches                                                              ; Medium   ; 0          ; 0      ; nonstandard-timing, latch       ;
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals                                                        ; Low      ; 0          ; 0      ; reset-usage                     ;
+; LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch                                                        ; Low      ; 0          ; 0      ; dsp, reset-usage                ;
+; TMC-20053 - DSP Inputs Driven by High Fan-Out Net                                                                   ; Low      ; 0          ; 0      ; dsp                             ;
+; TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible                                               ; Low      ; 0          ; 0      ; register-duplication, synthesis ;
+; TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested                                              ; Low      ; 0          ; 0      ; register-duplication, synthesis ;
++---------------------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	261
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------------+
+; RES-30134 - Registers Not Reachable from Reset Release IP ;
++------------------------------------------+----------------+
+; Register Node                            ; Waived         ;
++------------------------------------------+----------------+
+; u_heartbeat|CLK_DELAY[12]                ;                ;
+; u_heartbeat|CLK_DELAY[5]                 ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|A[3]        ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|A[4]        ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|A[5]        ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|A[6]        ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|A[7]        ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|A[8]        ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|SDAO        ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|A[0]    ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|A[1]    ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|A[2]    ;                ;
+; u_heartbeat|CLK_DELAY[6]                 ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|A[3]    ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|A[4]    ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|A[5]    ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|A[6]    ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|A[7]    ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|A[8]    ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|DELY[3] ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|DELY[2] ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|CNT[3]  ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|CNT[2]  ;                ;
+; u_heartbeat|CLK_DELAY[7]                 ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|CNT[1]  ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|CNT[0]  ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|DELY[0] ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|DELY[1] ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|SDAO    ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|A[0]            ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|CNT[3]          ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|CNT[2]          ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|CNT[1]          ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|CNT[0]          ;                ;
+; u_heartbeat|CLK_DELAY[8]                 ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|BYTE[1]         ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|BYTE[0]         ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|A[1]            ;                ;
+; u_TFP410_I2C|W_POINTER_REG[1]            ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|A[2]            ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|A[3]            ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|BYTE[3]     ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|BYTE[2]     ;                ;
+; u_TFP410_I2C|CNT[0]                      ;                ;
+; u_TFP410_I2C|CNT[2]                      ;                ;
+; u_heartbeat|CLK_DELAY[9]                 ;                ;
+; u_TFP410_I2C|BYTE[1]                     ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|BYTE[1]     ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|BYTE[0]     ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|CNT[3]      ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|CNT[2]      ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|CNT[1]      ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|CNT[0]      ;                ;
+; u_TFP410_I2C|DELY[23]                    ;                ;
+; u_TFP410_I2C|DELY[22]                    ;                ;
+; u_TFP410_I2C|DELY[3]                     ;                ;
+; u_heartbeat|CLK_DELAY[10]                ;                ;
+; u_TFP410_I2C|DELY[4]                     ;                ;
+; u_TFP410_I2C|DELY[5]                     ;                ;
+; u_TFP410_I2C|DELY[6]                     ;                ;
+; u_TFP410_I2C|DELY[7]                     ;                ;
+; u_TFP410_I2C|DELY[8]                     ;                ;
+; u_TFP410_I2C|DELY[9]                     ;                ;
+; u_TFP410_I2C|DELY[10]                    ;                ;
+; u_TFP410_I2C|DELY[11]                    ;                ;
+; u_TFP410_I2C|DELY[12]                    ;                ;
+; u_TFP410_I2C|DELY[13]                    ;                ;
+; u_heartbeat|CLK_DELAY[11]                ;                ;
+; u_TFP410_I2C|DELY[14]                    ;                ;
+; u_TFP410_I2C|DELY[15]                    ;                ;
+; u_TFP410_I2C|DELY[16]                    ;                ;
+; u_TFP410_I2C|DELY[17]                    ;                ;
+; u_TFP410_I2C|DELY[18]                    ;                ;
+; u_TFP410_I2C|DELY[19]                    ;                ;
+; u_TFP410_I2C|DELY[20]                    ;                ;
+; u_TFP410_I2C|DELY[21]                    ;                ;
+; u_TFP410_I2C|DELY[26]                    ;                ;
+; u_TFP410_I2C|DELY[27]                    ;                ;
+; u_heartbeat|CLK_DELAY[31]                ;                ;
+; u_TFP410_I2C|DELY[28]                    ;                ;
+; u_TFP410_I2C|DELY[29]                    ;                ;
+; u_TFP410_I2C|DELY[30]                    ;                ;
+; u_TFP410_I2C|DELY[2]                     ;                ;
+; u_TFP410_I2C|DELY[1]                     ;                ;
+; u_TFP410_I2C|DELY[0]                     ;                ;
+; u_TFP410_I2C|R_GO                        ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|DELY[0]     ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|DELY[1]     ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|DELY[2]     ;                ;
+; u_heartbeat|CLK_DELAY[30]                ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|DELY[3]     ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|DELY[4]     ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|DELY[5]     ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|DELY[6]     ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|DELY[7]     ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|ST[4]       ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|ST[1]       ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|ST[3]       ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|ST[0]       ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|ST[2]       ;                ;
+; u_heartbeat|CLK_DELAY[29]                ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|END_OK      ;                ;
+; u_TFP410_I2C|CNT[1]                      ;                ;
+; u_TFP410_I2C|BYTE[0]                     ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|A[4]            ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|A[5]            ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|A[6]            ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|A[7]            ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|A[8]            ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|SDAO            ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|ST[3]   ;                ;
+; u_heartbeat|CLK_DELAY[13]                ;                ;
+; u_heartbeat|CLK_DELAY[28]                ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|ST[0]   ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|BYTE[0] ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|ST[2]   ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|ST[5]   ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|ST[1]   ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|ST[4]   ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|END_OK  ;                ;
+; u_TFP410_I2C|DELY[24]                    ;                ;
+; u_TFP410_I2C|DELY[25]                    ;                ;
+; u_TFP410_I2C|W_WORD_GO                   ;                ;
+; u_heartbeat|CLK_DELAY[27]                ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|ST[4]           ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|ST[3]           ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|ST[1]           ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|ST[0]           ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|ST[2]           ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|END_OK          ;                ;
+; u_TFP410_I2C|WCNT[4]                     ;                ;
+; u_TFP410_I2C|WCNT[6]                     ;                ;
+; u_TFP410_I2C|ST[5]                       ;                ;
+; u_TFP410_I2C|ST[1]                       ;                ;
+; u_heartbeat|CLK_DELAY[18]                ;                ;
+; u_TFP410_I2C|ST[2]                       ;                ;
+; u_TFP410_I2C|ST[3]                       ;                ;
+; u_TFP410_I2C|ST[4]                       ;                ;
+; u_TFP410_I2C|ST[0]                       ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[27]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[28]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[29]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[30]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[31]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[9]             ;                ;
+; u_heartbeat|CLK_DELAY[19]                ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[10]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[11]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[12]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[13]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[14]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[15]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[16]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[17]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[18]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[19]            ;                ;
+; u_heartbeat|CLK_DELAY[20]                ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[20]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[21]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[22]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[23]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[24]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[25]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[26]            ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[0]             ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[1]             ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[2]             ;                ;
+; u_heartbeat|CLK_DELAY[21]                ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[3]             ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[4]             ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[5]             ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[8]             ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[6]             ;                ;
+; u_TFP410_I2C|K0|CLK_DELAY[7]             ;                ;
+; u_TFP410_I2C|READY                       ;                ;
+; u_heartbeat|CK_1HZ                       ;                ;
+; u_TFP410_I2C|I2C_WRITE_i|SCLO            ;                ;
+; u_TFP410_I2C|I2C_WRITE_POINTER_i|SCLO    ;                ;
+; u_heartbeat|CLK_DELAY[22]                ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|SCLO        ;                ;
+; u_TFP410_I2C|K0|CK_1HZ                   ;                ;
+; u_heartbeat|CLK_DELAY[23]                ;                ;
+; u_heartbeat|CLK_DELAY[24]                ;                ;
+; u_heartbeat|CLK_DELAY[25]                ;                ;
+; u_heartbeat|CLK_DELAY[14]                ;                ;
+; u_heartbeat|CLK_DELAY[26]                ;                ;
+; u_heartbeat|CLK_DELAY[16]                ;                ;
+; u_heartbeat|CLK_DELAY[17]                ;                ;
+; rx_stretch[4]                            ;                ;
+; rx_stretch[3]                            ;                ;
+; rx_stretch[2]                            ;                ;
+; rx_stretch[1]                            ;                ;
+; rx_stretch[0]                            ;                ;
+; rx_stretch[21]                           ;                ;
+; rx_stretch[20]                           ;                ;
+; u_heartbeat|CLK_DELAY[15]                ;                ;
+; rx_stretch[19]                           ;                ;
+; rx_stretch[6]                            ;                ;
+; rx_stretch[7]                            ;                ;
+; rx_stretch[8]                            ;                ;
+; rx_stretch[9]                            ;                ;
+; rx_stretch[10]                           ;                ;
+; rx_stretch[11]                           ;                ;
+; rx_stretch[12]                           ;                ;
+; rx_stretch[13]                           ;                ;
+; rx_stretch[14]                           ;                ;
+; u_heartbeat|CLK_DELAY[0]                 ;                ;
+; rx_stretch[15]                           ;                ;
+; rx_stretch[16]                           ;                ;
+; rx_stretch[17]                           ;                ;
+; rx_stretch[18]                           ;                ;
+; rx_stretch[5]                            ;                ;
+; u_RESET_DELY|DELAY_CNT[31]               ;                ;
+; u_RESET_DELY|DELAY_CNT[30]               ;                ;
+; u_RESET_DELY|DELAY_CNT[29]               ;                ;
+; u_RESET_DELY|DELAY_CNT[28]               ;                ;
+; u_RESET_DELY|DELAY_CNT[27]               ;                ;
+; u_heartbeat|CLK_DELAY[1]                 ;                ;
+; u_RESET_DELY|DELAY_CNT[26]               ;                ;
+; u_RESET_DELY|DELAY_CNT[22]               ;                ;
+; u_RESET_DELY|DELAY_CNT[21]               ;                ;
+; u_RESET_DELY|DELAY_CNT[20]               ;                ;
+; u_RESET_DELY|DELAY_CNT[0]                ;                ;
+; u_RESET_DELY|DELAY_CNT[1]                ;                ;
+; u_RESET_DELY|DELAY_CNT[2]                ;                ;
+; u_RESET_DELY|DELAY_CNT[3]                ;                ;
+; u_RESET_DELY|DELAY_CNT[4]                ;                ;
+; u_RESET_DELY|DELAY_CNT[5]                ;                ;
+; u_heartbeat|CLK_DELAY[2]                 ;                ;
+; u_RESET_DELY|DELAY_CNT[6]                ;                ;
+; u_RESET_DELY|DELAY_CNT[7]                ;                ;
+; u_RESET_DELY|DELAY_CNT[8]                ;                ;
+; u_RESET_DELY|DELAY_CNT[9]                ;                ;
+; u_RESET_DELY|DELAY_CNT[10]               ;                ;
+; u_RESET_DELY|DELAY_CNT[11]               ;                ;
+; u_RESET_DELY|DELAY_CNT[12]               ;                ;
+; u_RESET_DELY|DELAY_CNT[13]               ;                ;
+; u_RESET_DELY|DELAY_CNT[14]               ;                ;
+; u_RESET_DELY|DELAY_CNT[15]               ;                ;
+; u_heartbeat|CLK_DELAY[3]                 ;                ;
+; u_RESET_DELY|DELAY_CNT[16]               ;                ;
+; u_RESET_DELY|DELAY_CNT[17]               ;                ;
+; u_RESET_DELY|DELAY_CNT[18]               ;                ;
+; u_RESET_DELY|DELAY_CNT[19]               ;                ;
+; u_RESET_DELY|DELAY_CNT[25]               ;                ;
+; u_RESET_DELY|DELAY_CNT[23]               ;                ;
+; u_RESET_DELY|DELAY_CNT[24]               ;                ;
+; u_TFP410_I2C|WCNT[9]                     ;                ;
+; u_TFP410_I2C|WCNT[8]                     ;                ;
+; u_TFP410_I2C|WCNT[7]                     ;                ;
+; u_heartbeat|CLK_DELAY[4]                 ;                ;
+; u_TFP410_I2C|WCNT[5]                     ;                ;
+; u_TFP410_I2C|WCNT[3]                     ;                ;
+; u_TFP410_I2C|WCNT[2]                     ;                ;
+; u_TFP410_I2C|WCNT[1]                     ;                ;
+; u_TFP410_I2C|WCNT[0]                     ;                ;
+; u_TFP410_I2C|DELY[31]                    ;                ;
+; u_TFP410_I2C|W_POINTER_GO                ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|A[0]        ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|A[1]        ;                ;
+; u_TFP410_I2C|I2C_READ_DATA_i|A[2]        ;                ;
++------------------------------------------+----------------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	22
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------+
+; RES-30132 - Registers May Not Be Properly Reset ;
++----------------+--------------------------------+
+; Register Node  ; Waived                         ;
++----------------+--------------------------------+
+; rx_stretch[4]  ;                                ;
+; rx_stretch[7]  ;                                ;
+; rx_stretch[8]  ;                                ;
+; rx_stretch[9]  ;                                ;
+; rx_stretch[10] ;                                ;
+; rx_stretch[11] ;                                ;
+; rx_stretch[12] ;                                ;
+; rx_stretch[13] ;                                ;
+; rx_stretch[14] ;                                ;
+; rx_stretch[15] ;                                ;
+; rx_stretch[16] ;                                ;
+; rx_stretch[3]  ;                                ;
+; rx_stretch[17] ;                                ;
+; rx_stretch[18] ;                                ;
+; rx_stretch[5]  ;                                ;
+; rx_stretch[2]  ;                                ;
+; rx_stretch[1]  ;                                ;
+; rx_stretch[0]  ;                                ;
+; rx_stretch[21] ;                                ;
+; rx_stretch[20] ;                                ;
+; rx_stretch[19] ;                                ;
+; rx_stretch[6]  ;                                ;
++----------------+--------------------------------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	1
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------+
+; FLP-10500 - Non Driving Top Level Inputs Found ;
++------------+-----------------------------------+
+; Input Name ; Waived                            ;
++------------+-----------------------------------+
+; SW[1]      ;                                   ;
++------------+-----------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------+
+; LNT-30011 - Design Contains Combinational Loops ;
++-------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------------------------------------------------------------------+
+; LNT-30017 - Register Output Driving Its Own Asynchronous Control Signal Directly or Through Combinational Logic ;
++-----------------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------+
+; LNT-30023 - Reset Nets with Polarity Conflict ;
++-----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		exclude_ram_blocks_without_mif = True
++---------------------------------------------------------------------------------------------------------------------+
+; RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Modified Before the FPGA Enters User Mode ;
++---------------------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------+
+; TMC-20052 - Paths with Post Synthesis Inferred Latches ;
++--------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------+
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		DSP_Chain_Threshold = 2
+		DSP_Check_User_WYSIWYGs = True
++--------------------------------------------------------------+
+; LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		DSP_High_Fanout_Net_Threshold = 500
+		DSP_Chain_Threshold = 2
+		DSP_Check_User_WYSIWYGs = True
++---------------------------------------------------+
+; TMC-20053 - DSP Inputs Driven by High Fan-Out Net ;
++---------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------------------------+
+; TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------------------------------+
+; TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested ;
++------------------------------------------------------------------------+
+
+

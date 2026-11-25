@@ -1,0 +1,17 @@
+
+State Machine - Summary
+
+State Machine - u_frame_rx|st
+Name st.RX_G st.RX_R st.H_B st.H_A st.RX_B 
+st.H_A 0 0 0 0 0 
+st.H_B 0 0 1 1 0 
+st.RX_R 0 1 0 1 0 
+st.RX_G 1 0 0 1 0 
+st.RX_B 0 0 0 1 1 
+
+State Machine - u_uart_rx|state
+Name state.S_STOP state.S_DATA state.S_START state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_START 0 0 1 1 
+state.S_DATA 0 1 0 1 
+state.S_STOP 1 0 0 1 

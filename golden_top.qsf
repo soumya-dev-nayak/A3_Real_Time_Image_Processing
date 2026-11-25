@@ -1,0 +1,176 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2026  Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus Prime License Agreement,
+# the Altera IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Altera and sold by Altera or its authorized distributors.  Please
+# refer to the Altera Software License Subscription Agreements 
+# on the Quartus Prime software download page.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 26.1.1 Build 130 08/06/2026 SC Pro Edition
+# Date created = 10:54:31  November 25, 2026
+#
+# -------------------------------------------------------------------------- #
+set_global_assignment -name TOP_LEVEL_ENTITY golden_top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 26.1.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:54:31  NOVEMBER 25, 2026"
+set_global_assignment -name LAST_QUARTUS_VERSION "26.1.1 Pro Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name DEVICE A3CZ135BB18AE7S
+set_global_assignment -name FAMILY "Agilex 3"
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name VERILOG_FILE v/video_timing.v
+set_global_assignment -name VERILOG_FILE v/pixel_proc.v
+set_global_assignment -name VERILOG_FILE v/img_reader.v
+set_global_assignment -name MIF_FILE mif/image.mif
+set_global_assignment -name VERILOG_FILE v/sync_delay.v
+set_global_assignment -name VERILOG_FILE v/uart_rx.v
+set_global_assignment -name VERILOG_FILE v/uart_frame_rx.v
+set_global_assignment -name VERILOG_FILE v/TFP410_I2C.v
+set_global_assignment -name VERILOG_FILE v/RESET_DELY.v
+set_global_assignment -name VERILOG_FILE v/image_path_top.v
+set_global_assignment -name VERILOG_FILE v/I2C_WRITE_POINTER.v
+set_global_assignment -name VERILOG_FILE v/I2C_WRITE.v
+set_global_assignment -name VERILOG_FILE v/I2C_READ_DATA.v
+set_global_assignment -name VERILOG_FILE v/golden_top.v
+set_global_assignment -name VERILOG_FILE v/frame_buffer.v
+set_global_assignment -name VERILOG_FILE v/CLOCKMEM.v
+set_global_assignment -name POWER_APPLY_THERMAL_MARGIN ADDITIONAL
+set_global_assignment -name IP_FILE ip/V_PLL.ip
+set_global_assignment -name IP_FILE ip/reset_release.ip
+
+#============================================================
+# Configuration scheme/pin
+#============================================================
+set_global_assignment -name USE_CONF_DONE SDM_IO16
+set_global_assignment -name USE_INIT_DONE SDM_IO13
+set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "ACTIVE SERIAL X4"
+set_global_assignment -name ACTIVE_SERIAL_CLOCK AS_FREQ_100MHZ
+set_global_assignment -name DEVICE_INITIALIZATION_CLOCK OSC_CLK_1_125MHZ
+
+#============================================================
+# CLOCK
+#============================================================
+set_instance_assignment -name IO_STANDARD "1.2-V" -to CLOCK0_50
+
+set_location_assignment PIN_K43  -to CLOCK0_50
+
+#============================================================
+# KEY
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to KEY[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to KEY[1]
+set_location_assignment PIN_E2   -to KEY[0]
+set_location_assignment PIN_K3   -to KEY[1]
+
+#============================================================
+# FPGA
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to FPGA_UART_RX
+set_location_assignment PIN_L1   -to FPGA_UART_RX
+
+#============================================================
+# SW
+#============================================================
+set_instance_assignment -name IO_STANDARD "1.2-V" -to SW[0]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to SW[1]
+set_location_assignment PIN_A19  -to SW[0]
+set_location_assignment PIN_B24  -to SW[1]
+
+#============================================================
+# LED
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED[3]
+set_location_assignment PIN_AG2  -to LED[0]
+set_location_assignment PIN_AM6  -to LED[1]
+set_location_assignment PIN_AF1  -to LED[2]
+set_location_assignment PIN_AF2  -to LED[3]
+
+
+#============================================================
+# HDMI
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_I2C_SCL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_I2C_SDA
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_HS
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_VS
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[0]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[1]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[2]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[3]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[4]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[5]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[6]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[7]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[8]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[9]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[10]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[11]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[12]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[13]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[14]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[15]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[16]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[17]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[18]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[19]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[20]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[21]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[22]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_D[23]
+set_instance_assignment -name IO_STANDARD "1.2-V" -to HDMI_TX_DE
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.2-V SSTL" -to HDMI_TX_CLK_p
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_ISEL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_PD_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DDC_I2C_SCL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DDC_I2C_SDA
+set_location_assignment PIN_M2   -to HDMI_I2C_SCL
+set_location_assignment PIN_N2   -to HDMI_I2C_SDA
+set_location_assignment PIN_R52  -to HDMI_TX_HS
+set_location_assignment PIN_N52  -to HDMI_TX_VS
+set_location_assignment PIN_G52  -to HDMI_TX_D[0]
+set_location_assignment PIN_J52  -to HDMI_TX_D[1]
+set_location_assignment PIN_G51  -to HDMI_TX_D[2]
+set_location_assignment PIN_J51  -to HDMI_TX_D[3]
+set_location_assignment PIN_M51  -to HDMI_TX_D[4]
+set_location_assignment PIN_H43  -to HDMI_TX_D[5]
+set_location_assignment PIN_A34  -to HDMI_TX_D[6]
+set_location_assignment PIN_A29  -to HDMI_TX_D[7]
+set_location_assignment PIN_B29  -to HDMI_TX_D[8]
+set_location_assignment PIN_B27  -to HDMI_TX_D[9]
+set_location_assignment PIN_A26  -to HDMI_TX_D[10]
+set_location_assignment PIN_B26  -to HDMI_TX_D[11]
+set_location_assignment PIN_A31  -to HDMI_TX_D[12]
+set_location_assignment PIN_H35  -to HDMI_TX_D[13]
+set_location_assignment PIN_A37  -to HDMI_TX_D[14]
+set_location_assignment PIN_F35  -to HDMI_TX_D[15]
+set_location_assignment PIN_F40  -to HDMI_TX_D[16]
+set_location_assignment PIN_F32  -to HDMI_TX_D[17]
+set_location_assignment PIN_V52  -to HDMI_TX_D[18]
+set_location_assignment PIN_K35  -to HDMI_TX_D[19]
+set_location_assignment PIN_V51  -to HDMI_TX_D[20]
+set_location_assignment PIN_K32  -to HDMI_TX_D[21]
+set_location_assignment PIN_K40  -to HDMI_TX_D[22]
+set_location_assignment PIN_A24  -to HDMI_TX_D[23]
+set_location_assignment PIN_R51  -to HDMI_TX_DE
+set_location_assignment PIN_L51  -to HDMI_TX_CLK_p
+set_location_assignment PIN_J2   -to HDMI_ISEL
+set_location_assignment PIN_J1   -to HDMI_PD_n
+
+set_global_assignment -name SDC_FILE golden_top.sdc
