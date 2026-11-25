@@ -48,7 +48,13 @@ At power-up, before any PC upload happens, the frame buffer is pre-loaded from a
   <b>Figure 1:</b> PC to FPGA Data Processing Pipeline
 </p>
 
-See `PC_TO_FPGA_pipeline.png` and `data_flow_diagram.svg` in the repo root for the original hand-drawn versions of this diagram.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/soumya-dev-nayak/A3_Real_Time_Image_Processing/main/data_flow_diagram.svg" width="800">
+</p>
+
+<p align="center">
+  <b>Figure 2:</b> Real-Time Image Processing Data Flow Diagram
+</p>
 
 ## Repository layout
 
